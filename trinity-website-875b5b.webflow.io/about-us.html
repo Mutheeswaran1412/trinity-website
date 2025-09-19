@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html
+  data-wf-domain="trinity-website-875b5b.webflow.io"
+  data-wf-page="68c8ed023c167a28e6d8440d"
+  data-wf-site="68c8ed013c167a28e6d84332"
+  data-wf-status="1"
+  lang="en"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>About Us - Webflow HTML website template</title>
+    <meta
+      content="Learn more about Zeal Consult, your partner in business growth through comprehensive website audits, competitive analysis, and data-driven digital strategies."
+      name="description"
+    />
+    <meta
+      content="About Us - Webflow HTML website template"
+      property="og:title"
+    />
+    <meta
+      content="Learn more about Zeal Consult, your partner in business growth through comprehensive website audits, competitive analysis, and data-driven digital strategies."
+      property="og:description"
+    />
+    <meta
+      content="https://cdn.prod.website-files.com/66d714555784f849823be7fa/66f15a07a91a9c050c0700d0_Info%20Graphics.jpg"
+      property="og:image"
+    />
+    <meta
+      content="About Us - Webflow HTML website template"
+      property="twitter:title"
+    />
+    <meta
+      content="Learn more about Zeal Consult, your partner in business growth through comprehensive website audits, competitive analysis, and data-driven digital strategies."
+      property="twitter:description"
+    />
+    <meta
+      content="https://cdn.prod.website-files.com/66d714555784f849823be7fa/66f15a07a91a9c050c0700d0_Info%20Graphics.jpg"
+      property="twitter:image"
+    />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link
+      href="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/css/trinity-website-875b5b.webflow.shared.b21e2f13f.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script type="text/javascript">
+      !(function (o, c) {
+        var n = c.documentElement,
+          t = " w-mod-";
+        (n.className += t + "js"),
+          ("ontouchstart" in o ||
+            (o.DocumentTouch && c instanceof DocumentTouch)) &&
+            (n.className += t + "touch");
+      })(window, document);
+    </script>
+    <link
+      href="../cdn.prod.website-files.com/images/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link
+      href="../cdn.prod.website-files.com/images/favicon.ico"
+      rel="apple-touch-icon"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="trinity-styles.css" />
+    <style>
+      .container-large, .container-medium, .container-small {
+        max-width: 80% !important;
+      }
+      @media (max-width: 768px) {
+        .container-large, .container-medium, .container-small {
+          max-width: 95% !important;
+        }
+      }
+    </style>
+
+    <style>
+      body, html { overflow-x: hidden !important; max-width: 100vw !important; }
+      * { box-sizing: border-box; }
+      .container-large, .container-medium, .container-small { max-width: 100% !important; overflow-x: hidden; }
+      @media (max-width: 768px) { [data-aos] { transform: none !important; } }
+    </style>
+  </head>
+  <body>
+    <header class="new-responsive-header">
+      <div class="new-header-container">
+        <div class="new-logo">
+          <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+        </div>
+        <nav class="new-nav" id="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about-us.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="career.html">Career</a>
+          <a href="#footer" class="new-get-started">Get Started</a>
+        </nav>
+        <div class="new-hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <script>
+      document.getElementById('hamburger').addEventListener('click', function() {
+        document.getElementById('nav-menu').classList.toggle('active');
+      });
+    </script>
+
+    <div class="page-wrapper">
+      <div class="global-styles w-embed">
+        <style>
+          /* Make text look crisper and more legible in all browsers */
+          /*body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}*/
+
+          /* Focus state style for keyboard navigation for the focusable elements */
+          *[tabindex]:focus-visible,
+          input[type="file"]:focus-visible {
+            outline: 0.125rem solid #4d65ff;
+            outline-offset: 0.125rem;
+          }
+
+          /* Set color style to inherit */
+          .inherit-color * {
+            color: inherit;
+          }
+
+          /* Get rid of top margin on first element in any rich text element */
+          .w-richtext > :not(div):first-child,
+          .w-richtext > div:first-child > :first-child {
+            margin-top: 0 !important;
+          }
+
+          /* Get rid of bottom margin on last element in any rich text element */
+          .w-richtext > :last-child,
+          .w-richtext ol li:last-child,
+          .w-richtext ul li:last-child {
+            margin-bottom: 0 !important;
+          }
+
+          /* Make sure containers never lose their center alignment */
+          .container-medium,
+          .container-small,
+          .container-large {
+            margin-right: auto !important;
+            margin-left: auto !important;
+          }
+
+          /* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+          /*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+
+          /* Apply "..." after 3 lines of text */
+          .text-style-3lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+          }
+
+          /* Apply "..." after 2 lines of text */
+          .text-style-2lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+
+          /* These classes are never overwritten */
+          .hide {
+            display: none !important;
+          }
+
+          @media screen and (max-width: 991px) {
+            .hide,
+            .hide-tablet {
+              display: none !important;
+            }
+          }
+          @media screen and (max-width: 767px) {
+            .hide-mobile-landscape {
+              display: none !important;
+            }
+          }
+          @media screen and (max-width: 479px) {
+            .hide-mobile {
+              display: none !important;
+            }
+          }
+
+          .margin-0 {
+            margin: 0rem !important;
+          }
+
+          .padding-0 {
+            padding: 0rem !important;
+          }
+
+          .spacing-clean {
+            padding: 0rem !important;
+            margin: 0rem !important;
+          }
+
+          .margin-top {
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+          }
+
+          .padding-top {
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+          }
+
+          .margin-right {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+          }
+
+          .padding-right {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+          }
+
+          .margin-bottom {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+          }
+
+          .padding-bottom {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+          }
+
+          .margin-left {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+          }
+
+          .padding-left {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+          }
+
+          .margin-horizontal {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+          }
+
+          .padding-horizontal {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+          }
+
+          .margin-vertical {
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+          }
+
+          .padding-vertical {
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+          }
+          
+          /* Force FAQ content visibility with maximum specificity */
+          .faq_section .faq_container .faq_item .faq_content_block .faq_content_inner {
+            height: auto !important;
+            opacity: 1 !important;
+            display: block !important;
+            visibility: visible !important;
+            overflow: visible !important;
+            max-height: none !important;
+          }
+          
+          .faq_section .faq_container .faq_item .faq_content_block .faq_content_inner p {
+            color: #000000 !important;
+            background-color: #ffffff !important;
+            padding: 15px !important;
+            border-radius: 8px !important;
+            margin: 10px 0 !important;
+            font-weight: 600 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            font-size: 16px !important;
+          }
+          
+          .faq_item.w-dropdown .w-dropdown-list {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+
+          /* Increase about page hero image size */
+          .fifty_fifty_comp .fifty_fifty-grid-right {
+            flex: 3 !important;
+          }
+          
+          .fifty_fifty_comp .fifty_fifty-grid-left {
+            flex: 0.5 !important;
+          }
+
+          /* Increase left side image size when image is on left */
+          .fifty_fifty_comp .fifty_fifty-grid-left:has(.fifty_fifty_img_wr) {
+            flex: 3 !important;
+          }
+
+          .fifty_fifty_comp .fifty_fifty_img_wr {
+            width: 120% !important;
+            height: auto !important;
+          }
+
+          .fifty_fifty_comp .fifty_fifty-grid-right {
+            max-width: none !important;
+            width: 100% !important;
+          }
+
+          .fifty_fifty_comp .fifty_fifty-grid-left {
+            max-width: none !important;
+            width: 100% !important;
+          }
+
+          .fifty_fifty_comp .image_fit {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            border-radius: 12px !important;
+          }
+
+          /* Modern Who We Are heading styling */
+          .who-we-are-modern {
+            padding-left: 1.5rem !important;
+            border-left: 5px solid #00d4ff !important;
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+            animation: slideInLeft 1s ease-out 0.5s forwards !important;
+            font-size: 5rem !important;
+            letter-spacing: 0.1em !important;
+            word-spacing: 0.3em !important;
+          }
+
+          @keyframes slideInLeft {
+            from {
+              opacity: 0 !important;
+              transform: translateX(-30px) !important;
+            }
+            to {
+              opacity: 1 !important;
+              transform: translateX(0) !important;
+            }
+          }
+
+          /* Reduce width for Why Client Choose Us and Meet Our Experts sections */
+          .helping_business_block .container-large,
+          .teams_block .container-large {
+            max-width: 60% !important;
+          }
+
+          /* Increase font size for team member designations */
+          .team_member_pos {
+            font-size: 1.1rem !important;
+          }
+
+          @media (max-width: 768px) {
+            .helping_business_block .container-large,
+            .teams_block .container-large {
+              max-width: 95% !important;
+            }
+          }
+        </style>
+      </div>
+      <main class="main-wrapper">
+
+        <section style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover; padding: 120px 0; color: white;" data-aos="fade-up">
+          <div class="padding-global">
+            <div class="container-large" style="text-align: center;">
+              <div
+                data-w-id="330cc851-6a14-19f0-32aa-ccd9bdc04159"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;"
+              >
+
+                <div class="fifty_fifty-grid-left" style="display: none;">
+                  <div>
+                    <div class="title-small is-neon">WHO WE ARE</div>
+                    <div class="padding-bottom padding-xsmall"></div>
+                    <p class="paragraph-2" style="color: white; font-size: 1.8rem; line-height: 1.4;">
+                      <strong class="bold-text-3" style="color: white; font-weight: 600;"
+                        >Trinity began as a specialist staffing company, but we
+                        didn’t stop there. With over 100 years of combined
+                        leadership and deep HR and data expertise, we understand
+                        your challenges and generate a measurable impact.<br /><br />With
+                        a sharp understanding of talent, technology, and
+                        business challenges, we have evolved into a
+                        comprehensive software solutions provider. Today, we
+                        stand at the forefront of Data and AI innovation,
+                        empowering businesses to achieve digital transformation
+                        with confidence.<br /><br />This synergy is our greatest
+                        strength and your biggest advantage. From data
+                        engineering and AI-driven platforms to enterprise
+                        software and digital products, our diverse team
+                        consistently delivers outcomes that matter, efficiently,
+                        effectively, and with dedication.</strong
+                      >
+                    </p>
+                  </div>
+                </div>
+              <div class="who-we-are-modern" style="color: white; margin-bottom: 2rem; font-weight: 700; line-height: 1.2;">Who<br>We<br>Are</div>
+              <div style="color: white; font-size: 1.3rem; line-height: 1.8; max-width: 900px; margin: 0 auto; text-align: left;">
+                <p style="margin-bottom: 2.5rem; text-align: justify;">Trinity began as a specialist staffing company, but we didn't stop there. With over 100 years of combined leadership and deep HR and data expertise, we understand your challenges and generate a measurable impact.</p>
+                <p style="margin-bottom: 2.5rem; text-align: justify;">With a sharp understanding of talent, technology, and business challenges, we have evolved into a comprehensive software solutions provider. Today, we stand at the forefront of Data and AI innovation, empowering businesses to achieve digital transformation with confidence.</p>
+                <p style="margin: 0; text-align: justify;">This synergy is our greatest strength and your biggest advantage. From data engineering and AI-driven platforms to enterprise software and digital products, our diverse team consistently delivers outcomes that matter, efficiently, effectively, and with dedication.</p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          data-w-id="8e2bf262-8b65-4012-d450-963cd06e86b1"
+          class="helping_business_block"
+        >
+          <div class="padding-global">
+            <div class="container-large">
+              <div
+                data-w-id="33b3562d-1177-e0f5-137f-6c89646d532b"
+                class="center_title_block"
+              >
+                <h2 data-aos="fade-up">Why Client Choose Us</h2>
+              </div>
+              <div class="padding-bottom padding-large"></div>
+              <div class="details_card_wr" data-aos="zoom-in">
+                <div
+                  data-w-id="3db1cb65-2920-aa4e-4966-019e01f05093"
+                  class="detail_card"
+                >
+                  <img
+                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84443_Our%20Expertise-1.svg"
+                    loading="lazy"
+                    alt=""
+                    class="icon_60"
+                  />
+                  <h5>Certified Databricks Partnership &amp; Expertise</h5>
+                </div>
+                <div
+                  data-w-id="3db1cb65-2920-aa4e-4966-019e01f05099"
+                  class="detail_card"
+                >
+                  <img
+                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84445_Our%20Approach.svg"
+                    loading="lazy"
+                    alt=""
+                    class="icon_60"
+                  />
+                  <h5>
+                    Dedicated Data Engineering Specialists for Every
+                    Projectproach
+                  </h5>
+                </div>
+                <div
+                  data-w-id="3db1cb65-2920-aa4e-4966-019e01f0509f"
+                  class="detail_card"
+                >
+                  <img
+                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84446_Where%20We%20Operate.svg"
+                    loading="lazy"
+                    alt=""
+                    class="icon_60"
+                  />
+                  <h5>Agile Delivery with Transparent Project Managemen</h5>
+                </div>
+                <div
+                  data-w-id="5f72c401-5cce-30df-e497-107af099c8f1"
+                  class="detail_card"
+                >
+                  <img
+                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84421_Icon%20(1).svg"
+                    loading="lazy"
+                    alt="What we do?"
+                    class="icon_60"
+                  />
+                  <h5>24/7 Support and Strategic Consulting Calls</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="global-impact-section" style="background: #f8f9fa; padding: 80px 0;" data-aos="fade-up">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="center_title_block" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin-bottom: 1rem;" data-aos="fade-up">Our Core Values</h2>
+                <p style="color: #666; font-size: 1.2rem; margin: 0;">The DNA of how we think, build, and lead.</p>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
+                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4f46e5, #7c3aed); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Innovation</h3>
+                  <p style="color: #666; line-height: 1.6; margin: 0;">We embrace the power of emerging technologies to create solutions that are smarter, faster, and future-ready.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
+                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ec4899, #f97316); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                      <path d="M12 15L8 11L9.41 9.59L12 12.17L14.59 9.59L16 11L12 15Z" fill="currentColor"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Excellence</h3>
+                  <p style="color: #666; line-height: 1.6; margin: 0;">We strive for perfection in everything we do, from the code we write to the relationships we build.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
+                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                      <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Commitment</h3>
+                  <p style="color: #666; line-height: 1.6; margin: 0;">We fully commit to understanding our clients' challenges and solving them with trust, focus, and results.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
+                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                      <path d="M16 7C16 9.21 14.21 11 12 11C9.79 11 8 9.21 8 7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7ZM12 14C16.42 14 20 15.79 20 18V21H4V18C4 15.79 7.58 14 12 14Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Collaboration</h3>
+                  <p style="color: #666; line-height: 1.6; margin: 0;">We grow stronger together across teams, with clients, and through partnerships, believing in open minds and shared wins.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="teams_block padding-section-medium" data-aos="fade-up">
+          <div class="padding-global">
+            <div class="container-large">
+              <div
+                data-w-id="33b3562d-1177-e0f5-137f-6c89646d532b"
+                class="center_title_block"
+              >
+                <h2 data-aos="fade-up">Meet Our Experts</h2>
+              </div>
+              <div class="padding-bottom padding-medium"></div>
+              <div
+                data-w-id="df06524e-ca08-5104-0255-08253cf326d0"
+                style="
+                  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                  -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                  -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                  transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                  opacity: 1;
+                "
+                class="four_column_grid"
+              >
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84422_young-business-people-sitting-meeting-table-conference-room-discussing-work-planning-strategy%202.avif"
+                      loading="lazy"
+                      alt="Alex Johnson"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div class="team_member_info">
+                    <h4 class="team_member_title">Alex Johnson</h4>
+                    <p class="team_member_pos">Senior Business Strategist</p>
+                  </div>
+                </div>
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84423_young-business-people-sitting-meeting-table-conference-room-discussing-work-planning-strategy%202.avif"
+                      loading="lazy"
+                      alt="Team Member"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div class="team_member_info">
+                    <h4 class="team_member_title">Taylor Smith</h4>
+                    <p class="team_member_pos">Financial Consultant</p>
+                  </div>
+                </div>
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84441_young-business-man.avif"
+                      loading="lazy"
+                      alt="Team Member"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div class="team_member_info">
+                    <h4 class="team_member_title">Jordan Lee</h4>
+                    <p class="team_member_pos">Operations Manager</p>
+                  </div>
+                </div>
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84447_young-business-women.avif"
+                      loading="lazy"
+                      alt="Casey martinez"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div class="team_member_info">
+                    <h4 class="team_member_title">Casey Martinez</h4>
+                    <p class="team_member_pos">Marketing Consultant</p>
+                  </div>
+                </div>
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84441_young-business-man.avif"
+                      loading="lazy"
+                      alt="Team Member"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div
+                    id="w-node-af3e645f-a52f-593d-e9ad-8b4ee1614330-e6d8440d"
+                    class="team_member_info"
+                  >
+                    <h4 class="team_member_title">Riley Thompson</h4>
+                    <p class="team_member_pos">Business Analyst</p>
+                  </div>
+                </div>
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84422_young-business-people-sitting-meeting-table-conference-room-discussing-work-planning-strategy%202.avif"
+                      loading="lazy"
+                      alt="Alex Johnson"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div class="team_member_info">
+                    <h4 class="team_member_title">Morgan Brown</h4>
+                    <p class="team_member_pos">Client Relations Manager</p>
+                  </div>
+                </div>
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84447_young-business-women.avif"
+                      loading="lazy"
+                      alt="Casey martinez"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div class="team_member_info">
+                    <h4 class="team_member_title">Jamie Patel</h4>
+                    <p class="team_member_pos">IT Consultant</p>
+                  </div>
+                </div>
+                <div class="team_member_col">
+                  <div class="team_thumbnail_wr">
+                    <img
+                      src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84423_young-business-people-sitting-meeting-table-conference-room-discussing-work-planning-strategy%202.avif"
+                      loading="lazy"
+                      alt="Team Member"
+                      class="image_fit"
+                    />
+                  </div>
+                  <div class="team_member_info">
+                    <h4 class="team_member_title">Quinn Davis</h4>
+                    <p class="team_member_pos">Project Manager</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <footer id="footer" style="background: #1a1a1a; color: #ffffff; padding: 6rem 0 4rem; position: relative; overflow: hidden; min-height: 400px;">
+          <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 12rem; font-weight: 900; color: rgba(255,255,255,0.05); white-space: nowrap; z-index: 1; pointer-events: none;">Trinity Technology</div>
+          
+          <div style="position: relative; z-index: 2; max-width: 1600px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; align-items: start;">
+              <div style="min-height: 120px;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+                  <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions" style="height: 40px; width: auto;">
+                </div>
+                <p style="color: #888; font-size: 0.85rem; margin: 0; line-height: 1.4;">© Copyright Trinity Technology Solutions 2025. All rights reserved.</p>
+              </div>
+              
+              <div style="min-height: 120px;">
+                <h4 style="color: #ffffff; font-size: 1rem; font-weight: 600; margin-bottom: 2rem;">Pages</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                  <a href="index.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Home</a>
+                  <a href="services.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Services</a>
+                  <a href="about-us.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">About</a>
+                  <a href="contact.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Contact</a>
+                </div>
+              </div>
+              
+              <div style="min-height: 120px;">
+                <h4 style="color: #ffffff; font-size: 1rem; font-weight: 600; margin-bottom: 2rem;">Call Us</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                  <div style="color: #888; font-size: 0.8rem;">
+                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 0.1rem; font-size: 0.8rem;">USA Office</div>
+                    <a href="tel:+12142068558" style="color: #888; text-decoration: none; transition: color 0.3s ease; font-size: 0.8rem;">+1 214-206-8558</a>
+                  </div>
+                  <div style="color: #888; font-size: 0.8rem;">
+                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 0.1rem; font-size: 0.8rem;">India Office</div>
+                    <a href="tel:+919791273026" style="color: #888; text-decoration: none; transition: color 0.3s ease; font-size: 0.8rem;">+91 9791273026</a>
+                  </div>
+                  <div style="color: #888; font-size: 0.8rem;">
+                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 0.1rem; font-size: 0.8rem;">Oman Office</div>
+                    <a href="tel:+96892416321" style="color: #888; text-decoration: none; transition: color 0.3s ease; font-size: 0.8rem;">+968 92416321</a>
+                  </div>
+                  <div style="color: #888; font-size: 0.8rem;">
+                    <div style="font-weight: 600; color: #ffffff; margin-bottom: 0.1rem; font-size: 0.8rem;">Netherlands Office</div>
+                    <a href="tel:+31108990639" style="color: #888; text-decoration: none; transition: color 0.3s ease; font-size: 0.8rem;">+31 10899 0639</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div style="min-height: 120px;">
+                <h4 style="color: #ffffff; font-size: 1rem; font-weight: 600; margin-bottom: 2rem;">Follow Us</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                  <a href="https://www.linkedin.com/company/trinity-technology-solutions/posts/?feedView=all" target="_blank" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+              
+              <div style="min-height: 120px;">
+                <h4 style="color: #ffffff; font-size: 1rem; font-weight: 600; margin-bottom: 2rem;">Contact</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                  <a href="mailto:sales@trinitetech.com" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">sales@trinitetech.com</a>
+                  <a href="tel:+12142068558" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">+1 214-206-8558</a>
+                  <span style="color: #888; font-size: 0.8rem;">USA, India, Oman, Netherlands</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <style>
+            footer a:hover {
+              color: #ffffff !important;
+            }
+            @media (max-width: 1024px) {
+              footer > div:nth-child(2) > div {
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 1.5rem !important;
+              }
+              footer > div:nth-child(2) > div > div:first-child {
+                grid-column: 1 / -1 !important;
+                margin-bottom: 1.5rem !important;
+              }
+            }
+            @media (max-width: 768px) {
+              footer > div:nth-child(2) > div {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+              }
+              footer > div:nth-child(2) > div > div:first-child {
+                grid-column: 1 !important;
+              }
+              footer div[style*="font-size: 8rem"] {
+                font-size: 4rem !important;
+                bottom: -40px !important;
+              }
+            }
+          </style>
+        </footer>
+      </main>
+    </div>
+    <script
+      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68c8ed013c167a28e6d84332"
+      type="text/javascript"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="contact-modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeContactModal()">&times;</span>
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <form id="contactForm" onsubmit="submitContactForm(event)">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Phone" required>
+          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <style>
+      .contact-modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+      }
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      }
+      .close-btn {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #666;
+      }
+      .close-btn:hover {
+        color: #000;
+      }
+      .modal-content h2 {
+        margin: 0 0 1.5rem 0;
+        color: #22396b;
+      }
+      .modal-content input,
+      .modal-content textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      .modal-content input:focus,
+      .modal-content textarea:focus {
+        outline: none;
+        border-color: #22396b;
+      }
+      .submit-btn {
+        background: #22396b;
+        color: white;
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        width: 100%;
+      }
+      .submit-btn:hover {
+        background: #1a2d5a;
+      }
+      @media (max-width: 768px) {
+        .modal-content {
+          margin: 10% auto;
+          padding: 1.5rem;
+          width: 95%;
+        }
+      }
+    </style>
+
+    <script>
+      function openContactModal() {
+        document.getElementById('contactModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeContactModal() {
+        document.getElementById('contactModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      
+      function submitContactForm(event) {
+        event.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
+        closeContactModal();
+        document.getElementById('contactForm').reset();
+      }
+      
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const modal = document.getElementById('contactModal');
+        if (event.target === modal) {
+          closeContactModal();
+        }
+      }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-out",
+        once: true,
+        offset: 50
+      });
+    </script>
+  </body>
+</html>

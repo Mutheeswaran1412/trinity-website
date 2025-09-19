@@ -1,0 +1,10 @@
+/* Reduce width for content sections only, not hero sections or footer */
+.services .container-large,
+.teams_block .container-large,
+.helping_business_block .container-large,
+.global-impact-section .container-large,
+.fifty_fifty_alternate .container-large,
+.contact_comp .container-large {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}

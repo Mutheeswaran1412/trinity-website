@@ -1,0 +1,43 @@
+.nav_fixed {
+  display: block !important;
+}
+
+.u-nav-spacer {
+  display: block !important;
+}
+
+.nav_container {
+  display: grid !important;
+  grid-template-columns: 1fr 2fr 1fr !important;
+  align-items: center !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+.nav_brand {
+  justify-self: start !important;
+}
+
+.nav_menu {
+  justify-self: center !important;
+}
+
+.nav_menu_container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2rem !important;
+}
+
+.nav-menu-inner {
+  display: flex !important;
+  gap: 1.5rem !important;
+}
+
+.button.is-nav {
+  background: #22396b !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+}
