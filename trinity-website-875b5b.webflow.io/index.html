@@ -75,6 +75,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="trinity-styles.css" />
     <link rel="stylesheet" href="animations.css" />
+    <link rel="stylesheet" href="mobile-fix.css" />
+    <link rel="stylesheet" href="mobile-complete-fix.css" />
 
   </head>
   <body>
@@ -106,7 +108,7 @@
     <script src="navigation-fix.js"></script>
     <script src="animations.js"></script>
 
-    <div class="page-wrapper" style="overflow-x: hidden; max-width: 100vw;">
+    <div class="page-wrapper" style="overflow-x: hidden !important; max-width: 100vw !important; width: 100% !important;">
       <div class="global-styles w-embed">
         <style>
           /* Make text look crisper and more legible in all browsers */
@@ -436,14 +438,15 @@ a,
           .service-card-new {
             background: white;
             border-radius: 12px;
-            padding: 2rem 1.5rem;
+            padding: 1rem 0.75rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
             border: 1px solid #f1f5f9;
             text-decoration: none;
+            height: 60px;
           }
           
           .service-card-new:hover,
@@ -465,10 +468,10 @@ a,
           }
           
           .service-icon-new {
-            width: 48px;
-            height: 48px;
+            width: 32px;
+            height: 32px;
             background: #1e293b;
-            border-radius: 8px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -477,10 +480,14 @@ a,
           }
           
           .service-title-new {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #1e293b;
             margin: 0;
+            line-height: 1.1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           
           @media (max-width: 768px) {
@@ -672,14 +679,6 @@ a,
             display: none !important;
           }
           
-          /* New Testimonials Section Styles */
-          .testimonials-container-new {
-            overflow: hidden;
-            width: 100%;
-            margin-top: 2rem;
-          }
-          
-          .testimonials-track-new {
             display: flex;
             gap: 2rem;
             animation: slideTestimonialsNew 40s linear infinite;
@@ -902,7 +901,6 @@ a,
             }
           }
           
-          .testimonials-container-new:hover .testimonials-track-new {
             animation-play-state: paused;
           }
           
@@ -932,22 +930,25 @@ a,
           /* Global White Background Theme */
           body {
             background: white !important;
-            overflow-x: hidden;
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
           }
           
           html {
-            overflow-x: hidden;
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
           }
           
           * {
-            box-sizing: border-box;
+            box-sizing: border-box !important;
           }
           
           .container-large,
           .container-medium,
           .container-small {
             max-width: 80% !important;
-            overflow-x: hidden;
+            overflow-x: hidden !important;
+            margin: 0 auto !important;
           }
           
           @media (max-width: 768px) {
@@ -955,6 +956,12 @@ a,
             .container-medium,
             .container-small {
               max-width: 95% !important;
+              padding: 0 1rem !important;
+            }
+            
+            .padding-global {
+              padding-left: 1rem !important;
+              padding-right: 1rem !important;
             }
           }
           
@@ -1224,20 +1231,308 @@ a,
           }
           
 
-          /* Responsive About Section */
+          /* Enhanced Mobile Responsive Fixes */
           @media (max-width: 768px) {
+            /* Hero section mobile optimization */
+            .section_hero {
+              min-height: 70vh !important;
+              padding-top: 60px !important;
+            }
+            
+            #hero-video {
+              height: 70vh !important;
+              object-position: center !important;
+            }
+            
+            .hero_content {
+              padding: 2rem 1rem !important;
+              text-align: center !important;
+            }
+            
+            .hero_grid {
+              padding: 0 1rem !important;
+            }
+            
+            .hero_content h1 {
+              font-size: 1.8rem !important;
+              line-height: 1.3 !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            .hero_content p {
+              font-size: 1rem !important;
+              margin-bottom: 1.5rem !important;
+            }
+            
+            .container-large {
+              padding: 0 1rem !important;
+              max-width: 100% !important;
+            }
+            
+            /* About section mobile fixes */
+            .who-we-are-section {
+              padding: 3rem 0 !important;
+            }
+            
+            .who-we-are-section .container-large {
+              padding: 0 1rem !important;
+            }
+            
             .who-we-are-section .container-large > div {
               grid-template-columns: 1fr !important;
               gap: 2rem !important;
-              text-align: center;
+              text-align: center !important;
+            }
+            
+            .who-we-are-section h2 {
+              font-size: 1.4rem !important;
+              line-height: 1.5 !important;
+              padding: 0 1rem !important;
             }
             
             .who-we-are-section .container-large img {
               max-width: 100% !important;
+              width: 100% !important;
+              height: auto !important;
             }
             
             .who-we-are-section .container-large > div > div:last-child {
               padding: 1rem 0 !important;
+            }
+            
+            .who-we-are-section h2 {
+              font-size: 1.5rem !important;
+              line-height: 1.4 !important;
+              margin-bottom: 1.5rem !important;
+            }
+            
+            /* Databricks section mobile fixes */
+            .databricks-section {
+              padding: 3rem 0 !important;
+            }
+            
+            .databricks-section .container-large {
+              padding: 0 1rem !important;
+            }
+            
+            .databricks-section .container-large > div {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
+              text-align: center !important;
+            }
+            
+            .databricks-section h2 {
+              font-size: 1.6rem !important;
+              line-height: 1.3 !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            .databricks-section p {
+              font-size: 1rem !important;
+              margin-bottom: 1.5rem !important;
+            }
+            
+            .databricks-section > div > div > div:nth-child(2) {
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: center !important;
+              gap: 1.5rem !important;
+              margin-top: 1.5rem !important;
+            }
+            
+            .databricks-section img {
+              width: 80px !important;
+              height: 80px !important;
+            }
+            
+            .databricks-section h4 {
+              font-size: 0.9rem !important;
+            }
+            
+            /* Technology stack mobile fixes */
+            .tech-stack-section {
+              padding: 3rem 0 !important;
+            }
+            
+            .tech-stack-section .container-large {
+              padding: 0 1rem !important;
+            }
+            
+            .tech-stack-section h2 {
+              font-size: 1.5rem !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            .tech-stack-section .title-small {
+              font-size: 1rem !important;
+            }
+            
+            .tech-stack-section > div > div > div:nth-child(3),
+            .tech-stack-section > div > div > div:nth-child(4) {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 1rem !important;
+            }
+            
+            .tech-stack-section > div > div > div:nth-child(3) > div,
+            .tech-stack-section > div > div > div:nth-child(4) > div {
+              padding: 1.5rem 0.5rem !important;
+            }
+            
+            .tech-stack-section img {
+              width: 30px !important;
+              height: 30px !important;
+            }
+            
+            .tech-stack-section h3 {
+              font-size: 0.8rem !important;
+            }
+            
+            /* Services section mobile fixes */
+            .services {
+              padding: 3rem 0 !important;
+            }
+            
+            .services .container-large {
+              padding: 0 1rem !important;
+            }
+            
+            .service-card-new {
+              padding: 1.5rem 1rem !important;
+              flex-direction: row !important;
+              align-items: center !important;
+            }
+            
+            .service-icon-new {
+              width: 40px !important;
+              height: 40px !important;
+            }
+            
+            .service-title-new {
+              font-size: 0.9rem !important;
+              white-space: normal !important;
+              overflow: visible !important;
+              text-overflow: unset !important;
+            }
+            
+            /* Business section mobile fixes */
+            .businesses-section {
+              padding: 3rem 0 !important;
+            }
+            
+            .businesses-section .container-large {
+              padding: 0 1rem !important;
+            }
+            
+            .business-preview {
+              height: 150px !important;
+            }
+            
+            .business-title {
+              font-size: 1.3rem !important;
+            }
+            
+            .business-desc {
+              font-size: 0.9rem !important;
+            }
+            
+            /* Global section mobile fixes */
+            .global-section {
+              padding: 3rem 0 !important;
+            }
+            
+            .global-section .container-large {
+              padding: 0 1rem !important;
+            }
+            
+            .world-map {
+              height: 250px !important;
+            }
+            
+            .world-map-container {
+              padding: 1rem !important;
+            }
+            
+            .location-cards {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 0.75rem !important;
+            }
+            
+            .location-card {
+              padding: 1rem !important;
+            }
+            
+            }
+            
+            /* FAQ section mobile fixes */
+            .faq-section {
+              padding: 2rem 0 !important;
+            }
+            
+            .faq-section .container-large {
+              padding: 0 1rem !important;
+            }
+            
+            .faq-question {
+              font-size: 1.1rem !important;
+              padding-right: 2rem !important;
+            }
+            
+            .faq-answer {
+              font-size: 0.9rem !important;
+            }
+            
+            /* Footer mobile fixes */
+            footer {
+              padding: 3rem 0 2rem !important;
+            }
+            
+            footer > div:nth-child(2) > div {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
+            }
+            
+            footer > div:nth-child(2) > div > div:first-child {
+              grid-column: 1 !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            footer h4 {
+              font-size: 1.2rem !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            footer a,
+            footer span {
+              font-size: 1rem !important;
+            }
+            
+            footer > div:first-child {
+              font-size: 3rem !important;
+              bottom: -20px !important;
+            }
+          }
+          
+          /* Extra small mobile fixes */
+          @media (max-width: 480px) {
+            .hero_content h1 {
+              font-size: 1.5rem !important;
+            }
+            
+            .four_column_grid {
+              grid-template-columns: 1fr !important;
+            }
+            
+            .counter-grid {
+              grid-template-columns: 1fr !important;
+            }
+            
+            .location-cards {
+              grid-template-columns: 1fr !important;
+            }
+            
+            .tech-stack-section > div > div > div:nth-child(3),
+            .tech-stack-section > div > div > div:nth-child(4) {
+              grid-template-columns: 1fr !important;
             }
           }
           
@@ -1273,7 +1568,7 @@ a,
                           <path d="M2 12L12 17L22 12" stroke="#ff6b35" stroke-width="2" stroke-linejoin="round"/>
                         </svg>
                       </div>
-                      <span>Trinity-databricks consulting partner</span>
+                      <span>Trinity-Databricks Consulting Partner</span>
                       <div class="partner-arrow">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                           <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1342,7 +1637,7 @@ a,
         <section class="who-we-are-section" style="background: #2c3e50; padding: 80px 0;" data-aos="fade-up">
           <div class="padding-global">
             <div class="container-large" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-              <div style="display: grid; grid-template-columns: 45% 55%; gap: 4rem; align-items: center;">
+              <div style="display: grid; grid-template-columns: 45% 55%; gap: 3rem; align-items: center;">
                 <!-- Left Side - Image -->
                 <div style="display: flex; justify-content: flex-start; align-items: center;">
                   <img
@@ -1354,10 +1649,10 @@ a,
                 </div>
                 
                 <!-- Right Side - Content -->
-                <div style="display: flex; flex-direction: column; justify-content: center;">
+                <div style="display: flex; flex-direction: column; justify-content: center; padding-right: 2rem;">
                   <h3 style="color: #bdc3c7; font-size: 0.9rem; font-weight: normal; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">About</h3>
-                  <h2 style="color: white; font-size: 2rem; line-height: 1.3; font-weight: 700; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="200">
-                    With over 100 years of combined leadership, we are your trusted partner in analyzing, automating, and simplifying your data journey, delivering real-time insights, seamurable growth
+                  <h2 style="color: white; font-size: 1.8rem; line-height: 1.5; font-weight: 700; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="200">
+                    With over 100 years of combined leadership, we are your trusted partner in analyzing, automating, and simplifying your data journey, delivering real-time insights and measurable growth.
                   </h2>
                   <a href="about-us.html" class="button is-medium w-button" style="background: #4d65ff; border: none; padding: 12px 24px; border-radius: 6px; color: white; text-decoration: none; display: inline-block; width: fit-content;">Know More</a>
                 </div>
@@ -1404,7 +1699,8 @@ a,
                 <h2 class="title-small" style="font-size: 1.2rem;">OUR TECHNOLOGY STACK</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <h2 style="color: #111111; font-size: 1.8rem;">Cutting-edge technologies powering Trinity's data analytics and AI solutions</h2>
+                  <h2 style="color: #111111; font-size: 1.8rem;">Advanced technologies powering Trinity’s data analytics and AI solutions
+
                 </div>
               </div>
               <div class="padding-bottom padding-medium"></div>
@@ -1526,7 +1822,7 @@ a,
                         <path d="M3 3V21H21V3H3ZM9 17H7V7H9V17ZM13 17H11V10H13V17ZM17 17H15V13H17V17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </div>
-                    <h3 class="service-title-new">Business Intelligence</h3>
+                    <h3 class="service-title-new">Business Intel</h3>
                   </a>
                   <a href="services/data-modernization.html" class="service-card-new" data-aos="zoom-in" data-aos-delay="500">
                     <div class="service-icon-new">
@@ -1534,7 +1830,7 @@ a,
                         <path d="M21 16V8C20.9996 7.64927 20.9071 7.30481 20.7315 7.00116C20.556 6.69751 20.3037 6.44536 20 6.27L13 2.27C12.696 2.09446 12.3511 2.00205 12 2.00205C11.6489 2.00205 11.304 2.09446 11 2.27L4 6.27C3.69626 6.44536 3.44398 6.69751 3.26846 7.00116C3.09294 7.30481 3.00036 7.64927 3 8V16C3.00036 16.3507 3.09294 16.6952 3.26846 16.9988C3.44398 17.3025 3.69626 17.5546 4 17.73L11 21.73C11.304 21.9055 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9055 13 21.73L20 17.73C20.3037 17.5546 20.556 17.3025 20.7315 16.9988C20.9071 16.6952 20.9996 16.3507 21 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </div>
-                    <h3 class="service-title-new">Data Modernization</h3>
+                    <h3 class="service-title-new">Data Modern</h3>
                   </a>
 
 
@@ -1547,7 +1843,7 @@ a,
                         <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </div>
-                    <h3 class="service-title-new">Web Development</h3>
+                    <h3 class="service-title-new">Web Dev</h3>
                   </a>
                   <a href="services/ai-solutions.html" class="service-card-new" data-aos="zoom-in" data-aos-delay="700">
                     <div class="service-icon-new">
@@ -1566,7 +1862,7 @@ a,
                         <path d="M8 15H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </div>
-                    <h3 class="service-title-new">ERP Solutions</h3>
+                    <h3 class="service-title-new">ERP</h3>
                   </a>
                   <a href="services/staffing-solutions.html" class="service-card-new" data-aos="zoom-in" data-aos-delay="900">
                     <div class="service-icon-new">
@@ -1576,7 +1872,7 @@ a,
                         <path d="M17 11L19 13L23 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </div>
-                    <h3 class="service-title-new">Staffing Solutions</h3>
+                    <h3 class="service-title-new">Staffing</h3>
                   </a>
 
                       
@@ -1670,9 +1966,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84468_Education%20(6).avif"
+                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="Doctor in mask"
+                    alt="Healthcare technology and digital medical innovation"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1683,14 +1979,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8445c_Financial%20Services.avif"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="hand on coins with market grow line"
-                    sizes="(max-width: 767px) 100vw, 502.0078125px"
-                    srcset="
-                      https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8445c_Financial%20Services.avif 500w,
-                      https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8445c_Financial%20Services.avif 502w
-                    "
+                    alt="Financial data analytics and digital banking technology"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1701,9 +1992,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84469_Financial_services.avif"
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="Financial Services"
+                    alt="Modern retail technology and e-commerce solutions"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1714,9 +2005,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8446a_manufacturing-1.avif"
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="Manufacturing"
+                    alt="Advanced manufacturing and robotics technology"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1727,14 +2018,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8445a_Technology.avif"
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="Man shaking hands with Robot"
-                    sizes="(max-width: 767px) 100vw, 502.0078125px"
-                    srcset="
-                      https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8445a_Technology.avif 500w,
-                      https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8445a_Technology.avif 502w
-                    "
+                    alt="Telecommunications infrastructure and 5G network technology"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1745,9 +2031,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8446c_Energy-1.avif"
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="Energy generating resources like windmill solar panel with evening shadow"
+                    alt="Digital technology and data center infrastructure"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1758,9 +2044,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8446d_real_estate.avif"
+                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="Real Estate Building near swimming pull"
+                    alt="Banking, Financial Services and Insurance digital transformation"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1771,9 +2057,9 @@ a,
                   class="sector_thumbnail"
                 >
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8446e_Education%20(9).avif"
+                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
-                    alt="Education Image"
+                    alt="Engineering design and technical innovation solutions"
                     class="aspect-ratio-large"
                   />
                   <div class="sector_thumbnail-overlay"></div>
@@ -1863,7 +2149,8 @@ a,
                 <h2 class="title-small" style="font-size: 1.2rem;">GLOBAL PRESENCE</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <h2 style="font-size: 1.8rem;">Trinity powers digital transformation with data analytics and AI across four continents with cutting-edge technology</h2>
+                  <h2 style="font-size: 1.8rem;">Trinity powers digital transformation with data analytics and AI across four continents with innovative technology
+
                 </div>
               </div>
               <div class="padding-bottom padding-medium"></div>
@@ -1891,121 +2178,6 @@ a,
                     <div class="location-flag">🇺🇸</div>
                     <h3>Plano</h3>
                     <p>Texas, USA</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="testimonials-section" style="background: #f8f9fa; padding: 80px 0;" data-aos="fade-up">
-          <div class="padding-global padding-section-large">
-            <div class="container-large">
-              <div class="title_block" style="text-align: center; margin-bottom: 3rem;">
-                <h3 style="font-size: 1.2rem; color: #6b7280; margin-bottom: 1rem; font-weight: 700;" data-aos="fade-up">What Our Clients Are Saying</h3>
-                <p style="color: #374151; font-size: 1.3rem; font-weight: 600; max-width: 600px; margin: 0 auto;">Our users love how Trinity simplifies their processes and streamlines operations</p>
-              </div>
-              <div class="testimonials-container-new">
-                <div class="testimonials-track-new">
-                  <div class="testimonial-card-new">
-                    <p>"Using Trinity For Years Now, And I Love Managing My Finances Without It. From Expenses To Creating Budgets, It's Simplified Every Aspect Of My Life. Thank You For Such An Amazing Product."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Michael Carter">
-                      <div>
-                        <h4>Michael Carter</h4>
-                        <span>Freelance Web Developer</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"Trinity Has Been A Game-Changer For Our Business. With Its Comprehensive Financial Management Tools, We've Been Able To Streamline Our Processes And Make More Informed Decisions. The Customer Support Team Is Also Top-Notch."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Anita Ramesh">
-                      <div>
-                        <h4>Anita Ramesh</h4>
-                        <span>Manager at GlobeSync</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"As Someone Who Is New To Investing, Trinity Has Been An Invaluable Resource. The Investment Management Tools Have Helped Me Understand My Portfolio Better And Optimize My Investments For Better Returns. I Couldn't Be Happier With The Results!"</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face" alt="Jordyn Saris">
-                      <div>
-                        <h4>Jordyn Saris</h4>
-                        <span>CEO, Beta Technologies</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"Trinity's data analytics platform transformed our decision-making process. The real-time insights and automated reporting have saved us countless hours while improving accuracy across all departments."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" alt="David Chen">
-                      <div>
-                        <h4>David Chen</h4>
-                        <span>CTO, DataFlow Solutions</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"Working with Trinity on our digital transformation journey has been exceptional. Their AI solutions have automated our workflows and delivered measurable ROI within the first quarter."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=50&h=50&fit=crop&crop=face" alt="Sarah Johnson">
-                      <div>
-                        <h4>Sarah Johnson</h4>
-                        <span>VP Operations, TechCorp</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Duplicate for infinite scroll -->
-                  <div class="testimonial-card-new">
-                    <p>"Using Trinity For Years Now, And I Love Managing My Finances Without It. From Expenses To Creating Budgets, It's Simplified Every Aspect Of My Life. Thank You For Such An Amazing Product."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Michael Carter">
-                      <div>
-                        <h4>Michael Carter</h4>
-                        <span>Freelance Web Developer</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"Trinity Has Been A Game-Changer For Our Business. With Its Comprehensive Financial Management Tools, We've Been Able To Streamline Our Processes And Make More Informed Decisions. The Customer Support Team Is Also Top-Notch."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Anita Ramesh">
-                      <div>
-                        <h4>Anita Ramesh</h4>
-                        <span>Manager at GlobeSync</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"As Someone Who Is New To Investing, Trinity Has Been An Invaluable Resource. The Investment Management Tools Have Helped Me Understand My Portfolio Better And Optimize My Investments For Better Returns. I Couldn't Be Happier With The Results!"</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face" alt="Jordyn Saris">
-                      <div>
-                        <h4>Jordyn Saris</h4>
-                        <span>CEO, Beta Technologies</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"Trinity's data analytics platform transformed our decision-making process. The real-time insights and automated reporting have saved us countless hours while improving accuracy across all departments."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" alt="David Chen">
-                      <div>
-                        <h4>David Chen</h4>
-                        <span>CTO, DataFlow Solutions</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial-card-new">
-                    <p>"Working with Trinity on our digital transformation journey has been exceptional. Their AI solutions have automated our workflows and delivered measurable ROI within the first quarter."</p>
-                    <div class="testimonial-author-new">
-                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=50&h=50&fit=crop&crop=face" alt="Sarah Johnson">
-                      <div>
-                        <h4>Sarah Johnson</h4>
-                        <span>VP Operations, TechCorp</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -2184,7 +2356,7 @@ a,
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 800,
+        duration: 1500,
         easing: 'ease-out',
         once: true,
         offset: 50

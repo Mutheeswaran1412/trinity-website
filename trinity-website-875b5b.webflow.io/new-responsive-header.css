@@ -89,6 +89,23 @@
 body {
   margin: 0;
   padding: 0;
+  padding-top: 80px;
+}
+
+/* Smooth scroll offset for anchor links */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Main content wrapper */
+.main-wrapper {
+  margin-top: 0;
+}
+
+/* First section adjustment */
+.main-wrapper > section:first-child {
+  margin-top: 0;
+  padding-top: 2rem;
 }
 
 /* Tablet Responsive */
@@ -155,6 +172,15 @@ body {
   body {
     margin: 0;
     padding: 0;
+    padding-top: 70px;
+  }
+  
+  html {
+    scroll-padding-top: 70px;
+  }
+  
+  .main-wrapper > section:first-child {
+    padding-top: 1rem;
   }
 }
 
