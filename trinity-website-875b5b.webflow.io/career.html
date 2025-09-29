@@ -72,6 +72,7 @@
     <link rel="stylesheet" href="new-responsive-header.css" />
     <link rel="stylesheet" href="reduce-width.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="consistent-header-spacing.css" />
     <style>
       /* Reduce width only for main content sections, not header/footer */
       main .container-large, 
@@ -96,7 +97,27 @@
         section .container-large,
         section .container-medium,
         section .container-small {
-          max-width: 90% !important;
+          max-width: 100% !important;
+          padding: 0 0.5rem !important;
+        }
+        .padding-global {
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+        }
+      }
+      @media (max-width: 480px) {
+        main .container-large, 
+        main .container-medium, 
+        main .container-small,
+        section .container-large,
+        section .container-medium,
+        section .container-small {
+          max-width: 100% !important;
+          padding: 0 0.25rem !important;
+        }
+        .padding-global {
+          padding-left: 0.25rem !important;
+          padding-right: 0.25rem !important;
         }
       }
     </style>
@@ -105,13 +126,98 @@
       * { box-sizing: border-box; }
       .container-large, .container-medium, .container-small { max-width: 100% !important; overflow-x: hidden; }
       @media (max-width: 768px) { [data-aos] { transform: none !important; } }
+      
+      /* Mobile Navigation Fixes */
+      @media (max-width: 768px) {
+        .new-nav {
+          position: fixed !important;
+          top: 0 !important;
+          left: -100% !important;
+          width: 100% !important;
+          height: 100vh !important;
+          background: white !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          align-items: center !important;
+          gap: 2rem !important;
+          transition: left 0.3s ease !important;
+          z-index: 9999 !important;
+        }
+        
+        .new-nav.active {
+          left: 0 !important;
+        }
+        
+        .new-nav a {
+          font-size: 1.5rem !important;
+          color: #22396b !important;
+          text-decoration: none !important;
+          font-weight: 600 !important;
+          padding: 1rem 0 !important;
+        }
+        
+        .new-nav a:hover {
+          color: #4d65ff !important;
+        }
+        
+        .new-get-started {
+          background: #4d65ff !important;
+          color: white !important;
+          padding: 1rem 2rem !important;
+          border-radius: 8px !important;
+          margin-top: 1rem !important;
+        }
+        
+        .new-get-started:hover {
+          background: #3d52cc !important;
+          color: white !important;
+        }
+        
+        .new-hamburger {
+          display: flex !important;
+          flex-direction: column !important;
+          cursor: pointer !important;
+          z-index: 10000 !important;
+          margin-left: auto !important;
+          margin-right: 1rem !important;
+        }
+        
+        .new-header-container {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          width: 100% !important;
+        }
+        
+        .new-hamburger span {
+          width: 25px !important;
+          height: 3px !important;
+          background: #22396b !important;
+          margin: 3px 0 !important;
+          transition: 0.3s !important;
+        }
+        
+        .new-hamburger.active span:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px) !important;
+        }
+        
+        .new-hamburger.active span:nth-child(2) {
+          opacity: 0 !important;
+        }
+        
+        .new-hamburger.active span:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px) !important;
+        }
+      }
     </style>
   </head>
   <body>
     <header class="new-responsive-header">
       <div class="new-header-container">
         <div class="new-logo">
-          <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          <a href="index.html">
+            <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          </a>
         </div>
         <nav class="new-nav" id="nav-menu">
           <a href="index.html">Home</a>
@@ -119,7 +225,7 @@
           <a href="about-us.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="career.html">Career</a>
-          <a href="#footer" class="new-get-started">Get Started</a>
+          <a href="contact.html" class="new-get-started">Get Started</a>
         </nav>
         <div class="new-hamburger" id="hamburger">
           <span></span>
@@ -130,7 +236,27 @@
     </header>
     <script>
       document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('nav-menu').classList.toggle('active');
+        const navMenu = document.getElementById('nav-menu');
+        const hamburger = document.getElementById('hamburger');
+        
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Close menu when clicking on nav links
+      document.querySelectorAll('.new-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+          document.getElementById('nav-menu').classList.remove('active');
+          document.getElementById('hamburger').classList.remove('active');
+          document.body.style.overflow = 'auto';
+        });
       });
     </script>
 
@@ -226,7 +352,7 @@
         </section>
 
         <!-- Why Work With Us -->
-        <section style="padding: 80px 0; background: #f8f9fa;" data-aos="fade-up">
+        <section style="padding: 80px 0; background: linear-gradient(rgba(248,249,250,0.9), rgba(248,249,250,0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover;" data-aos="fade-up">
           <div class="padding-global">
             <div class="container-large">
               <div style="text-align: center; margin-bottom: 60px;">
@@ -271,7 +397,7 @@
 
 
         <!-- Application Process -->
-        <section style="padding: 80px 0; background: #f8f9fa;" data-aos="fade-up">
+        <section style="padding: 80px 0; background: linear-gradient(rgba(248,249,250,0.9), rgba(248,249,250,0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop') center/cover;" data-aos="fade-up">
           <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <div style="text-align: center; margin-bottom: 60px;">
               <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: #333;" data-aos="fade-up">Our Hiring Process</h2>

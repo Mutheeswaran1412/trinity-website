@@ -1,0 +1,37 @@
+/* Remove spacing between content and footer in sub-service pages */
+
+/* Completely hide CTA sections to remove their space */
+.cta_section {
+  display: none !important;
+}
+
+/* Ensure footer has no top margin */
+footer {
+  margin-top: 0 !important;
+}
+
+/* Remove any bottom spacing from sections that might appear before footer */
+.padding-section-medium,
+.padding-section-large,
+.padding-section-large-xx {
+  margin-bottom: 0 !important;
+}
+
+/* Specifically target the last section before footer */
+main > section:last-child,
+.main-wrapper > section:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove any default spacing from the main wrapper */
+.main-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Ensure page wrapper doesn't add spacing */
+.page-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}

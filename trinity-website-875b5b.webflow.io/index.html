@@ -9,9 +9,9 @@
 >
   <head>
     <meta charset="utf-8" />
-    <title>Trinity Technology Solutions | Data Analytics & AI Transformation</title>
+    <title>Data and Analytics Services | Trinity Technology Solutions</title>
     <meta
-      content="Trinity Technology Solutions delivers cutting-edge data analytics and AI transformation services across India, Netherlands, Oman, and USA. Transform your business with our expert solutions."
+      content="We deliver expert data analytics and AI solutions across India, the Netherlands, Oman, and the USA to help businesses turn data into sustainable growth."
       name="description"
     />
     <meta
@@ -23,7 +23,7 @@
       property="og:title"
     />
     <meta
-      content="Trinity Technology Solutions delivers cutting-edge data analytics and AI transformation services across India, Netherlands, Oman, and USA. Transform your business with our expert solutions."
+      content="We deliver expert data analytics and AI solutions across India, the Netherlands, Oman, and the USA to help businesses turn data into sustainable growth."
       property="og:description"
     />
     <meta
@@ -35,7 +35,7 @@
       property="twitter:title"
     />
     <meta
-      content="Trinity Technology Solutions delivers cutting-edge data analytics and AI transformation services across India, Netherlands, Oman, and USA. Transform your business with our expert solutions."
+      content="We deliver expert data analytics and AI solutions across India, the Netherlands, Oman, and the USA to help businesses turn data into sustainable growth."
       property="twitter:description"
     />
     <meta
@@ -77,21 +77,27 @@
     <link rel="stylesheet" href="animations.css" />
     <link rel="stylesheet" href="mobile-fix.css" />
     <link rel="stylesheet" href="mobile-complete-fix.css" />
+    <link rel="stylesheet" href="consistent-header-spacing.css" />
+    <link rel="stylesheet" href="cross-platform-flags.css" />
+    <link rel="stylesheet" href="mobile-responsive-fix.css" />
 
   </head>
   <body>
     <header class="new-responsive-header">
       <div class="new-header-container">
         <div class="new-logo">
-          <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          <a href="index.html">
+            <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          </a>
         </div>
         <nav class="new-nav" id="nav-menu">
           <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
+
           <a href="about-us.html">About</a>
+          <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
           <a href="career.html">Career</a>
-          <a href="#footer" class="new-get-started">Get Started</a>
+          <a href="contact.html" class="new-get-started">Get Started</a>
         </nav>
         <div class="new-hamburger" id="hamburger">
           <span></span>
@@ -102,11 +108,32 @@
     </header>
     <script>
       document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('nav-menu').classList.toggle('active');
+        const navMenu = document.getElementById('nav-menu');
+        const hamburger = document.getElementById('hamburger');
+        
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Close menu when clicking on nav links
+      document.querySelectorAll('.new-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+          document.getElementById('nav-menu').classList.remove('active');
+          document.getElementById('hamburger').classList.remove('active');
+          document.body.style.overflow = 'auto';
+        });
       });
     </script>
     <script src="navigation-fix.js"></script>
     <script src="animations.js"></script>
+    <script src="cross-platform-flags.js"></script>
 
     <div class="page-wrapper" style="overflow-x: hidden !important; max-width: 100vw !important; width: 100% !important;">
       <div class="global-styles w-embed">
@@ -352,7 +379,7 @@ a,
             display: flex;
             align-items: center;
             gap: 2.5rem;
-            animation: scrollRight 25s linear infinite;
+            animation: scrollRight 45s linear infinite;
             width: calc(200% + 5rem);
           }
           
@@ -579,6 +606,38 @@ a,
             overflow: hidden;
           }
           
+          /* Google Maps scroll zoom control */
+          .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.1);
+            color: #22396b;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+          }
+          
+          .map-overlay:hover {
+            background: rgba(0, 0, 0, 0.2);
+          }
+          
+          .map-container {
+            position: relative;
+          }
+          
+          .map-overlay.hidden {
+            display: none;
+          }
+          
           .leaflet-popup-content-wrapper {
             background: #22396b;
             color: white;
@@ -626,8 +685,17 @@ a,
           }
           
           .location-flag {
-            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 0.5rem;
+            height: 2rem;
+          }
+          
+          .flag-svg {
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
           }
           
           .location-card h3 {
@@ -679,11 +747,7 @@ a,
             display: none !important;
           }
           
-            display: flex;
-            gap: 2rem;
-            animation: slideTestimonialsNew 40s linear infinite;
-            width: calc(200% + 4rem);
-          }
+          /* If you intended to style a selector, add it here, otherwise remove the stray properties */
           
           .testimonial-card-new {
             background: white;
@@ -901,9 +965,6 @@ a,
             }
           }
           
-            animation-play-state: paused;
-          }
-          
           @media (max-width: 768px) {
             .testimonial-card {
               min-width: 280px;
@@ -932,6 +993,7 @@ a,
             background: white !important;
             overflow-x: hidden !important;
             max-width: 100vw !important;
+            scroll-behavior: smooth;
           }
           
           html {
@@ -955,13 +1017,27 @@ a,
             .container-large,
             .container-medium,
             .container-small {
-              max-width: 95% !important;
-              padding: 0 1rem !important;
+              max-width: 100% !important;
+              padding: 0 0.5rem !important;
             }
             
             .padding-global {
-              padding-left: 1rem !important;
-              padding-right: 1rem !important;
+              padding-left: 0.5rem !important;
+              padding-right: 0.5rem !important;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .container-large,
+            .container-medium,
+            .container-small {
+              max-width: 100% !important;
+              padding: 0 0.25rem !important;
+            }
+            
+            .padding-global {
+              padding-left: 0.25rem !important;
+              padding-right: 0.25rem !important;
             }
           }
           
@@ -1461,8 +1537,6 @@ a,
               padding: 1rem !important;
             }
             
-            }
-            
             /* FAQ section mobile fixes */
             .faq-section {
               padding: 2rem 0 !important;
@@ -1542,6 +1616,95 @@ a,
             }
           }
           
+          /* Mobile Navigation Fixes */
+          @media (max-width: 768px) {
+            .new-hamburger {
+              margin-left: auto !important;
+              margin-right: 1rem !important;
+            }
+            
+            .new-header-container {
+              display: flex !important;
+              justify-content: space-between !important;
+              align-items: center !important;
+              width: 100% !important;
+            }
+          }
+          
+          /* Mobile Navigation Fixes */
+          @media (max-width: 768px) {
+            .new-nav {
+              position: fixed !important;
+              top: 0 !important;
+              left: -100% !important;
+              width: 100% !important;
+              height: 100vh !important;
+              background: white !important;
+              flex-direction: column !important;
+              justify-content: center !important;
+              align-items: center !important;
+              gap: 2rem !important;
+              transition: left 0.3s ease !important;
+              z-index: 9999 !important;
+            }
+            
+            .new-nav.active {
+              left: 0 !important;
+            }
+            
+            .new-nav a {
+              font-size: 1.5rem !important;
+              color: #22396b !important;
+              text-decoration: none !important;
+              font-weight: 600 !important;
+              padding: 1rem 0 !important;
+            }
+            
+            .new-nav a:hover {
+              color: #4d65ff !important;
+            }
+            
+            .new-get-started {
+              background: #4d65ff !important;
+              color: white !important;
+              padding: 1rem 2rem !important;
+              border-radius: 8px !important;
+              margin-top: 1rem !important;
+            }
+            
+            .new-get-started:hover {
+              background: #3d52cc !important;
+              color: white !important;
+            }
+            
+            .new-hamburger {
+              display: flex !important;
+              flex-direction: column !important;
+              cursor: pointer !important;
+              z-index: 10000 !important;
+            }
+            
+            .new-hamburger span {
+              width: 25px !important;
+              height: 3px !important;
+              background: #22396b !important;
+              margin: 3px 0 !important;
+              transition: 0.3s !important;
+            }
+            
+            .new-hamburger.active span:nth-child(1) {
+              transform: rotate(-45deg) translate(-5px, 6px) !important;
+            }
+            
+            .new-hamburger.active span:nth-child(2) {
+              opacity: 0 !important;
+            }
+            
+            .new-hamburger.active span:nth-child(3) {
+              transform: rotate(45deg) translate(-5px, -6px) !important;
+            }
+          }
+          
         </style>
       </div>
       <main class="main-wrapper">
@@ -1552,15 +1715,16 @@ a,
           </video>
           <div class="u-nav-spacer"></div>
           <div class="padding-global padding-horizontal-m-0">
-            <div class="container-large" style="max-width: 1600px; margin: 0 auto; padding: 0 2rem;">
+            <div class="container-large" style="max-width: 2000px; margin: 0 auto; padding: 0 2rem;">
               <div class="hero_grid">
                 <div
                   id="w-node-c869799b-6932-d519-9c89-71bb5ca2042b-5ca20426"
                   data-w-id="c869799b-6932-d519-9c89-71bb5ca2042b"
                   class="hero_content hero-fade-in"
+                  style="text-align: left; max-width: 1000px;"
                 >
                   <div>
-                    <a href="databricks-partner.html" class="partner-pill">
+                    <a href="https://www.databricks.com/company/partners" target="_blank" class="partner-pill">
                       <div class="partner-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                           <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff6b35" stroke-width="2" stroke-linejoin="round"/>
@@ -1576,24 +1740,23 @@ a,
                       </div>
                     </a>
                     <div class="padding-bottom padding-xsmall"></div>
-                    <h1 class="text-color-white heading-style-h2" style="font-size: 3rem; line-height: 1.2;" data-aos="fade-up">
-                      <strong>Empowering Businesses<br>with Data Analytics<br>and AI Across the Globe</strong>
+                    <h1 class="text-color-white heading-style-h2" style="font-size: 3.5rem; line-height: 1.2; text-align: left; max-width: 900px; margin: 0 0 2rem 0;" data-aos="fade-up">
+                      <strong>Empowering Businesses with Data Analytics and AI Across the Globe</strong>
                     </h1>
                     <div class="padding-bottom padding-xsmall"></div>
-                    <p class="body_one" style="font-size: 1.1rem; line-height: 1.6;">
-                      Harnessing the power of data analytics to transform
-                      businesses in India, <strong>the Netherlands</strong>,
-                      Oman, and <strong>the USA</strong>.
+                    <p class="body_one" style="font-size: 1.2rem; line-height: 1.6; text-align: left; max-width: 700px; margin: 0;">
+                      Harnessing the power of data analytics to transform businesses in USA, India, Oman, and Netherlands.
                     </p>
                   </div>
                   <div
                     id="w-node-c869799b-6932-d519-9c89-71bb5ca20435-5ca20426"
+                    style="text-align: center; margin-top: 2rem;"
                   >
                     <a
-                      href="#footer"
+                      href="contact.html"
                       class="button is-medium w-button"
-                      style="font-size: 1.5rem; padding: 1rem 2rem;"
-                      >Connect with us</a
+                      style="font-size: 1.2rem; padding: 1rem 2rem; background: #4d65ff; border-radius: 8px;"
+                      >Connect with Us</a
                     >
                   </div>
                 </div>
@@ -1634,7 +1797,7 @@ a,
             </div>
           </div>
         </section>
-        <section class="who-we-are-section" style="background: #2c3e50; padding: 80px 0;" data-aos="fade-up">
+        <section class="who-we-are-section" style="background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&h=1080&fit=crop') center/cover; padding: 80px 0;" data-aos="fade-up">
           <div class="padding-global">
             <div class="container-large" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
               <div style="display: grid; grid-template-columns: 45% 55%; gap: 3rem; align-items: center;">
@@ -1650,18 +1813,22 @@ a,
                 
                 <!-- Right Side - Content -->
                 <div style="display: flex; flex-direction: column; justify-content: center; padding-right: 2rem;">
-                  <h3 style="color: #bdc3c7; font-size: 0.9rem; font-weight: normal; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">About</h3>
-                  <h2 style="color: white; font-size: 1.8rem; line-height: 1.5; font-weight: 700; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="200">
-                    With over 100 years of combined leadership, we are your trusted partner in analyzing, automating, and simplifying your data journey, delivering real-time insights and measurable growth.
-                  </h2>
-                  <a href="about-us.html" class="button is-medium w-button" style="background: #4d65ff; border: none; padding: 12px 24px; border-radius: 6px; color: white; text-decoration: none; display: inline-block; width: fit-content;">Know More</a>
+                  <h2 style="color: #bdc3c7; font-size: 0.9rem; font-weight: normal; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">About</h2>
+                  <p style="color: white; font-size: 1.8rem; line-height: 1.5; font-weight: 700; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="200">
+                  With over 100 years of combined leadership, we are your trusted partner in analyzing, automating, and simplifying your data journey, delivering real-time insights, seamless workflows, and measurable growth.
+
+
+                  </p>
+                  <div style="text-align: center;">
+                    <a href="about-us.html" class="button is-medium w-button" style="background: #4d65ff; border: none; padding: 12px 24px; border-radius: 6px; color: white; text-decoration: none; display: inline-block; width: fit-content;">Explore</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="databricks-section" style="background: #2c3e50; padding: 80px 0;" data-aos="fade-up">
+        <section class="databricks-section" style="background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop') center/cover; padding: 80px 0;" data-aos="fade-up">
           <div class="padding-global">
             <div class="container-large" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
               <div style="display: grid; grid-template-columns: 60% 40%; gap: 2rem; align-items: center;">
@@ -1669,7 +1836,9 @@ a,
                 <div style="display: flex; flex-direction: column; justify-content: center;">
                   <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;" data-aos="fade-up">Elite Databricks Consulting Partner</h2>
                   <p style="color: white; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">Transform your data into AI-powered insights with our certified Databricks expertise. Start your AI-driven transformation journey today.</p>
-                  <a href="contact.html#contact-form" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-block; width: fit-content; transition: all 0.3s ease;">Talk to Data Experts</a>
+                  <div style="text-align: center;">
+                    <a href="contact.html#consultation" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-block; width: fit-content; transition: all 0.3s ease; cursor: pointer;">Talk to Data Experts</a>
+                  </div>
                 </div>
                 
                 <!-- Right Badges -->
@@ -1678,13 +1847,13 @@ a,
                     <a href="https://www.databricks.com/learn/certification/data-engineer-associate" target="_blank" style="text-decoration: none;">
                       <img src="https://www.databricks.com/sites/default/files/2024-05/associate-badge-de.png?v=1717145547" alt="Databricks Associate Data Engineer" style="width: 140px; height: 140px; object-fit: contain; margin-bottom: 1rem; cursor: pointer; transition: transform 0.3s ease;" data-aos="zoom-in" data-aos-delay="300">
                     </a>
-                    <h4 style="color: white; font-size: 1rem; font-weight: 600; margin: 0;">10+ Associate Engineers</h4>
+                    <h3 style="color: white; font-size: 1rem; font-weight: 600; margin: 0;">10+ Associate Engineers</h3>
                   </div>
                   <div style="text-align: center;">
                     <a href="https://www.databricks.com/learn/certification/data-engineer-professional" target="_blank" style="text-decoration: none;">
                       <img src="https://www.databricks.com/sites/default/files/2024-05/professional-badge-de.png?v=1717145841" alt="Databricks Professional Data Engineer" style="width: 140px; height: 140px; object-fit: contain; margin-bottom: 1rem; cursor: pointer; transition: transform 0.3s ease;" data-aos="zoom-in" data-aos-delay="500">
                     </a>
-                    <h4 style="color: white; font-size: 1rem; font-weight: 600; margin: 0;">Professional Engineers</h4>
+                    <h3 style="color: white; font-size: 1rem; font-weight: 600; margin: 0;">Professional Engineers</h3>
                   </div>
                 </div>
               </div>
@@ -1692,14 +1861,14 @@ a,
           </div>
         </section>
 
-        <section class="tech-stack-section" style="background: white; padding: 80px 0;">
+        <section class="tech-stack-section" style="background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop') center/cover; padding: 80px 0;">
           <div class="padding-global padding-section-large">
             <div class="container-large">
               <div class="title_block">
                 <h2 class="title-small" style="font-size: 1.2rem;">OUR TECHNOLOGY STACK</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <h2 style="color: #111111; font-size: 1.8rem;">Advanced technologies powering Trinity’s data analytics and AI solutions
+                  <p style="color: #111111; font-size: 1.8rem;">Advanced technologies powering Trinity’s data analytics and AI solutions
 
                 </div>
               </div>
@@ -1713,7 +1882,7 @@ a,
                 </div>
                 <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
                   <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://logos-world.net/wp-content/uploads/2024/01/Databricks-Symbol.png" alt="Databricks" style="width: 40px; height: 40px;">
+                    <img src="https://logos-world.net/wp-content/uploads/2024/01/Databricks-Symbol.png" alt="Databricks" style="max-width: 40px; max-height: 40px; object-fit: contain;">
                   </div>
                   <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Databricks</h3>
                 </div>
@@ -1739,13 +1908,13 @@ a,
               <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; max-width: 1200px; margin: 2rem auto 0;">
                 <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
                   <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/200px-Amazon_Web_Services_Logo.svg.png" alt="AWS" style="width: 40px; height: 40px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/200px-Amazon_Web_Services_Logo.svg.png" alt="AWS" style="max-width: 40px; max-height: 40px; object-fit: contain;">
                   </div>
                   <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">AWS</h3>
                 </div>
                 <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
                   <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFQ68GQ7HaMDD9EHZkEcthYaVxDZstZadJ4A&s" alt="Odoo" style="width: 40px; height: 40px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFQ68GQ7HaMDD9EHZkEcthYaVxDZstZadJ4A&s" alt="Odoo" style="max-width: 40px; max-height: 40px; object-fit: contain;">
                   </div>
                   <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Odoo</h3>
                 </div>
@@ -1757,7 +1926,7 @@ a,
                 </div>
                 <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
                   <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Logo.png" alt="Oracle" style="width: 40px; height: 40px;">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Logo.png" alt="Oracle" style="max-width: 40px; max-height: 40px; object-fit: contain;">
                   </div>
                   <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Oracle</h3>
                 </div>
@@ -1771,7 +1940,7 @@ a,
             </div>
           </div>
         </section>
-        <section id="services" class="services">
+        <section id="services" class="services" style="background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover;">
           <div class="padding-global padding-section-large-xx">
             <div class="container-large">
               <div
@@ -1781,7 +1950,7 @@ a,
                 <h2 class="title-small" style="font-size: 1.2rem;" data-aos="fade-up">OUR SERVICES</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <h2 style="font-size: 1.8rem;" data-aos="fade-up" data-aos-delay="200">Trinity's comprehensive data analytics and AI solutions designed to transform your business and drive sustainable growth</h2>
+                  <p style="font-size: 1.8rem;" data-aos="fade-up" data-aos-delay="200">Trinity's comprehensive data analytics and AI solutions designed to transform your business and drive sustainable growth</p>
                   <div class="title_block-right">
                   </div>
                 </div>
@@ -2074,7 +2243,7 @@ a,
             <div class="container-large">
               <div class="title_block">
                 <h2 class="title-small" style="color: white !important; font-size: 1.2rem; font-weight: 700; text-align: center; margin-bottom: 1rem;">Our Business Portfolio</h2>
-                <h3 style="color: #ccc !important; font-size: 1.1rem; font-weight: 400; text-align: center; margin-bottom: 3rem; opacity: 0.9;">Trinity's innovative companies delivering transformative solutions across multiple industries</h3>
+                <p style="color: #ccc !important; font-size: 1.1rem; font-weight: 400; text-align: center; margin-bottom: 3rem; opacity: 0.9;">Trinity's innovative companies delivering transformative solutions across multiple industries</p>
               </div>
               <div class="padding-bottom padding-medium"></div>
               <div class="businesses-grid-new">
@@ -2128,7 +2297,7 @@ a,
                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop" alt="Kalloori Connect" class="business-preview-img">
                   </div>
                   <div class="business-info">
-                    <h3 class="business-title">Kalloori Connect</h3>
+                    <h3 class="business-title">Kallooriconnect</h3>
                     <p class="business-desc">Comprehensive educational networking platform bridging students, institutions, and career opportunities.</p>
                     <div class="business-tech-stack">
                       <span class="tech-icon">🎓</span>
@@ -2149,33 +2318,79 @@ a,
                 <h2 class="title-small" style="font-size: 1.2rem;">GLOBAL PRESENCE</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <h2 style="font-size: 1.8rem;">Trinity powers digital transformation with data analytics and AI across four continents with innovative technology
+                  <p style="font-size: 1.8rem;">Trinity powers digital transformation with data analytics and AI across four continents with innovative technology
 
                 </div>
               </div>
               <div class="padding-bottom padding-medium"></div>
               <div class="world-map-container">
-                <div id="world-map" class="world-map"></div>
+                <div class="map-container">
+                  <div id="world-map" class="world-map"></div>
+                  <div id="map-overlay" class="map-overlay"></div>
+                </div>
                 
                 <!-- Location cards -->
                 <div class="location-cards">
                   <div class="location-card" data-location="chennai">
-                    <div class="location-flag">🇮🇳</div>
+                    <div class="location-flag">
+                      <svg width="32" height="24" viewBox="0 0 32 24" class="flag-svg">
+                        <rect width="32" height="8" fill="#FF9933"/>
+                        <rect y="8" width="32" height="8" fill="#FFFFFF"/>
+                        <rect y="16" width="32" height="8" fill="#138808"/>
+                        <circle cx="16" cy="12" r="3" fill="#000080" stroke="#000080" stroke-width="0.5"/>
+                      </svg>
+                    </div>
                     <h3>Chennai</h3>
                     <p>India</p>
                   </div>
                   <div class="location-card" data-location="hague">
-                    <div class="location-flag">🇳🇱</div>
+                    <div class="location-flag">
+                      <svg width="32" height="24" viewBox="0 0 32 24" class="flag-svg">
+                        <rect width="32" height="8" fill="#AE1C28"/>
+                        <rect y="8" width="32" height="8" fill="#FFFFFF"/>
+                        <rect y="16" width="32" height="8" fill="#21468B"/>
+                      </svg>
+                    </div>
                     <h3>The Hague</h3>
                     <p>Netherlands</p>
                   </div>
                   <div class="location-card" data-location="muscat">
-                    <div class="location-flag">🇴🇲</div>
+                    <div class="location-flag">
+                      <svg width="32" height="24" viewBox="0 0 32 24" class="flag-svg">
+                        <rect width="32" height="8" fill="#FFFFFF"/>
+                        <rect y="8" width="32" height="8" fill="#ED2939"/>
+                        <rect y="16" width="32" height="8" fill="#00A651"/>
+                        <rect width="10" height="24" fill="#ED2939"/>
+                      </svg>
+                    </div>
                     <h3>Muscat</h3>
                     <p>Oman</p>
                   </div>
                   <div class="location-card" data-location="plano">
-                    <div class="location-flag">🇺🇸</div>
+                    <div class="location-flag">
+                      <svg width="32" height="24" viewBox="0 0 32 24" class="flag-svg">
+                        <rect width="32" height="24" fill="#B22234"/>
+                        <rect y="2" width="32" height="2" fill="#FFFFFF"/>
+                        <rect y="6" width="32" height="2" fill="#FFFFFF"/>
+                        <rect y="10" width="32" height="2" fill="#FFFFFF"/>
+                        <rect y="14" width="32" height="2" fill="#FFFFFF"/>
+                        <rect y="18" width="32" height="2" fill="#FFFFFF"/>
+                        <rect y="22" width="32" height="2" fill="#FFFFFF"/>
+                        <rect width="13" height="14" fill="#3C3B6E"/>
+                        <g fill="#FFFFFF">
+                          <circle cx="2" cy="2" r="0.5"/>
+                          <circle cx="4" cy="2" r="0.5"/>
+                          <circle cx="6" cy="2" r="0.5"/>
+                          <circle cx="8" cy="2" r="0.5"/>
+                          <circle cx="10" cy="2" r="0.5"/>
+                          <circle cx="3" cy="4" r="0.5"/>
+                          <circle cx="5" cy="4" r="0.5"/>
+                          <circle cx="7" cy="4" r="0.5"/>
+                          <circle cx="9" cy="4" r="0.5"/>
+                          <circle cx="11" cy="4" r="0.5"/>
+                        </g>
+                      </svg>
+                    </div>
                     <h3>Plano</h3>
                     <p>Texas, USA</p>
                   </div>
@@ -2268,6 +2483,7 @@ a,
                   <a href="services.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Services</a>
                   <a href="about-us.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">About</a>
                   <a href="contact.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Contact</a>
+                  <a href="career.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Career</a>
                 </div>
               </div>
               
@@ -2353,6 +2569,7 @@ a,
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -2451,7 +2668,7 @@ a,
           <button class="quick-action">Contact Information</button>
           <button class="quick-action">Career Opportunities</button>
           <button class="quick-action">Marketing Services</button>
-          <button class="quick-action">Schedule a Meeting</button>
+          <button class="quick-action" onclick="window.location.href='contact.html#book-appointment'">Schedule a Meeting</button>
         </div>
 
         <div class="chat-input">
@@ -2918,7 +3135,8 @@ a,
             return "You can contact us by emailing hello@trinitetech.com or using the contact form on our website. For meetings, partnerships, or any inquiries, just drop us an email and we'll assist you promptly!";
           }
           if (text.includes('schedule') || text.includes('meeting') || text.includes('appointment')) {
-            return "Please submit a request via our Contact page or send an email to hello@trinitetech.com and we'll assist you in scheduling a meeting with our team.";
+            window.location.href = 'contact.html#book-appointment';
+            return "Redirecting you to our appointment booking section...";
           }
           if (text.includes('databricks')) {
             return "Yes, we are a certified Databricks partner! We provide Modern Data Platform with Databricks Lakehouse, Migration Accelerator, Data Governance & Lineage using Unity Catalog, and Industry-Specific Accelerators for BFSI, Retail, Healthcare, and more.";
@@ -2969,11 +3187,26 @@ a,
       
       // Interactive World Map
       document.addEventListener('DOMContentLoaded', function() {
-        const map = L.map('world-map').setView([20, 0], 2);
+        const map = L.map('world-map', {
+          scrollWheelZoom: false
+        }).setView([20, 0], 2);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '© OpenStreetMap contributors'
         }).addTo(map);
+        
+        const mapOverlay = document.getElementById('map-overlay');
+        const mapContainer = document.querySelector('.map-container');
+        
+        mapOverlay.addEventListener('click', function() {
+          map.scrollWheelZoom.enable();
+          mapOverlay.classList.add('hidden');
+        });
+        
+        mapContainer.addEventListener('mouseleave', function() {
+          map.scrollWheelZoom.disable();
+          mapOverlay.classList.remove('hidden');
+        });
         
         const locations = [
           { name: 'Chennai', country: 'India', coords: [13.0827, 80.2707], id: 'chennai' },
@@ -3119,11 +3352,62 @@ a,
         document.body.style.overflow = 'auto';
       }
       
+      // Initialize EmailJS
+      emailjs.init("pqGNmyI4nmJpnTacM");
+      
       function submitContactForm(event) {
         event.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
-        closeContactModal();
-        document.getElementById('contactForm').reset();
+        const formData = new FormData(event.target);
+        
+        // Show loading state
+        const submitBtn = event.target.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Send to Trinity
+        const toTrinityParams = {
+          from_name: formData.get('name'),
+          from_email: formData.get('email'),
+          message: formData.get('message'),
+          title: 'Contact Form Inquiry'
+        };
+        
+        emailjs.send(
+          "service_m8it7mm",
+          "template_i2yx6lo",
+          toTrinityParams,
+          "pqGNmyI4nmJpnTacM"
+        ).then(() => {
+          // Send auto-reply to client
+          const autoReplyParams = {
+            'Client Name': formData.get('name'),
+            to_email: formData.get('email')
+          };
+          
+          return emailjs.send(
+            "service_m8it7mm",
+            "template_5hus2xw",
+            autoReplyParams,
+            "pqGNmyI4nmJpnTacM"
+          );
+        }).then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            alert('Thank you for your message! We will get back to you soon.');
+            closeContactModal();
+            document.getElementById('contactForm').reset();
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            alert('Thank you for your message! We will get back to you soon.');
+            closeContactModal();
+            document.getElementById('contactForm').reset();
+          }
+        ).finally(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
       }
       
       // Close modal when clicking outside

@@ -58,6 +58,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../animations.css" />
     <link rel="stylesheet" href="reduced-headers.css" />
+    <link rel="stylesheet" href="../consistent-header-spacing.css" />
+    <link rel="stylesheet" href="footer-spacing-fix.css" />
+    <link rel="stylesheet" href="back-to-services.css" />
     <style>
       .new-responsive-header {
         position: fixed;
@@ -144,9 +147,7 @@
           display: flex;
         }
       }
-      body {
-        padding-top: 80px;
-      }
+
       
       /* Background image for hero section */
       .section_hero {
@@ -175,6 +176,28 @@
           max-width: 95% !important;
         }
       }
+      
+      /* Increase sub-services page images */
+      .thumbnail_large {
+        width: 100% !important;
+        max-width: 650px !important;
+        height: auto !important;
+        min-height: 450px !important;
+        object-fit: cover !important;
+      }
+      
+      .thumbnail_416 {
+        width: 100% !important;
+        max-width: 550px !important;
+        height: auto !important;
+        min-height: 400px !important;
+        object-fit: cover !important;
+      }
+      
+      /* Align Our Proven Process heading to left */
+      h2[style*="text-align: left"] {
+        text-align: left !important;
+      }
     </style>
     <style>
       body, html { overflow-x: hidden !important; max-width: 100vw !important; }
@@ -187,7 +210,9 @@
     <header class="new-responsive-header">
       <div class="new-header-container">
         <div class="new-logo">
-          <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          <a href="../index.html">
+            <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions" style="height: 70px; width: auto;">
+          </a>
         </div>
         <nav class="new-nav" id="nav-menu">
           <a href="../index.html">Home</a>
@@ -432,12 +457,7 @@ a,
                     <a href="../contact.html#consultation" class="button w-button">Schedule a Consultation</a>
                   </div>
                 </div>
-                <img
-                  src="https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e6f2c42414abaeaff5d831_marble%202%20(1).jpg"
-                  loading="lazy"
-                  alt=""
-                  class="hero_image object-position-left"
-                />
+
               </div>
             </div>
           </div>
@@ -453,9 +473,9 @@ a,
               <div class="content_grid">
                 <div class="what_we_offer_thumbnail">
                   <img
-                    src="https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e6f2c42414abaeaff5d831_marble%202%20(1).jpg"
+                    src="services-images/Web Development (2).png"
                     loading="lazy"
-                    alt="Trinity Technology Solutions Team"
+                    alt="Web Development Team"
                     class="thumbnail_large"
                   />
                 </div>
@@ -466,14 +486,14 @@ a,
                     <div class="content_richtext w-richtext">
                       <p>In today's digital landscape, your website is often the first impression customers have of your business. At Trinity Technology Solutions, we create responsive, user-friendly websites that not only look great but also drive results. Our web development approach combines modern design principles with robust functionality to deliver websites that engage users and support your business objectives.</p>
                       
-                      <h3 data-aos="fade-up">Key Web Development Features & Capabilities:</h3>
-                      <h4>Responsive Design:</h4>
+                      <h2 data-aos="fade-up">Key Web Development Features & Capabilities:</h2>
+                      <h3>Responsive Design:</h3>
                       <p>Create websites that work seamlessly across all devices and screen sizes.</p>
-                      <h4>Performance Optimization:</h4>
+                      <h3>Performance Optimization:</h3>
                       <p>Build fast-loading websites that provide excellent user experience.</p>
-                      <h4>SEO-Friendly Development:</h4>
+                      <h3>SEO-Friendly Development:</h3>
                       <p>Implement best practices for search engine visibility and ranking.</p>
-                      <h4>User-Friendly Interfaces:</h4>
+                      <h3>User-Friendly Interfaces:</h3>
                       <p>Design intuitive navigation and engaging user experiences.</p>
                     </div>
                   </div>
@@ -505,9 +525,9 @@ a,
                 </div>
                 <div class="content_thumbnail_wr reverse">
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed023c167a28e6d843cb/68c8ed023c167a28e6d844a0_Img%20(4).jpg"
+                    src="services-images/Web Development (1).png"
                     loading="lazy"
-                    alt=""
+                    alt="Web Development Process"
                     class="thumbnail_416"
                   />
                 </div>
@@ -520,7 +540,7 @@ a,
           <div class="padding-global">
             <div class="container-large">
               <div class="text-align-center">
-                <h2 class="text-color-white" data-aos="fade-up">Ready to Build Your Next Web Solution?</h2>
+
                 <div class="padding-bottom padding-small"></div>
 
               </div>
@@ -528,9 +548,21 @@ a,
           </div>
         </section>
         
+        
+        <section class="back-to-services-section" data-aos="fade-up">
+          <div class="padding-global">
+            <div class="container-large">
+              <a href="../services.html" class="back-to-services-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Services
+              </a>
+            </div>
+          </div>
+        </section>
 
-
-        <footer id="footer" style="background: #1a1a1a; color: #ffffff; padding: 6rem 0 4rem; position: relative; overflow: hidden; min-height: 400px;">
+        <footer id="footer" style="background: #1a1a1a; color: #ffffff; padding: 6rem 0 4rem; position: relative; overflow: hidden; min-height: 400px; margin-top: 0;">
           <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 12rem; font-weight: 900; color: rgba(255,255,255,0.05); white-space: nowrap; z-index: 1; pointer-events: none;">Trinity Technology</div>
 
           
@@ -551,6 +583,7 @@ a,
                   <a href="../services.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Services</a>
                   <a href="../about-us.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">About</a>
                   <a href="../contact.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Contact</a>
+                  <a href="../career.html" style="color: #888; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;">Career</a>
                 </div>
               </div>
               

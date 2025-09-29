@@ -53,6 +53,10 @@
     <link rel="stylesheet" href="../increase-width.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="reduced-headers.css" />
+    <link rel="stylesheet" href="../consistent-header-spacing.css" />
+    <link rel="stylesheet" href="footer-spacing-fix.css" />
+    <link rel="stylesheet" href="back-to-services.css" />
+    <link rel="stylesheet" href="mobile-text-fix.css" />
     <style>
       .new-responsive-header {
         position: fixed;
@@ -139,9 +143,6 @@
           display: flex;
         }
       }
-      body {
-        padding-top: 80px;
-      }
       
       /* Background image for hero section */
       .section_hero {
@@ -170,19 +171,64 @@
           max-width: 95% !important;
         }
       }
+      
+      /* Increase sub-services page images */
+      .thumbnail_large {
+        width: 100% !important;
+        max-width: 650px !important;
+        height: auto !important;
+        min-height: 450px !important;
+        object-fit: cover !important;
+      }
+      
+      .thumbnail_416 {
+        width: 100% !important;
+        max-width: 550px !important;
+        height: auto !important;
+        min-height: 400px !important;
+        object-fit: cover !important;
+      }
+      
+      /* Align Our Proven Process heading to left */
+      h2[style*="text-align: left"] {
+        text-align: left !important;
+      }
     </style>
     <style>
       body, html { overflow-x: hidden !important; max-width: 100vw !important; }
       * { box-sizing: border-box; }
       
-      @media (max-width: 768px) { [data-aos] { transform: none !important; } }
+      @media (max-width: 768px) { 
+        [data-aos] { transform: none !important; }
+        .heading, h2 {
+          font-size: 1.5rem !important;
+          line-height: 1.3 !important;
+          text-align: center !important;
+          padding: 0 1rem !important;
+          margin-bottom: 1.5rem !important;
+          word-wrap: break-word !important;
+          overflow-wrap: break-word !important;
+        }
+        .bold-text {
+          display: block !important;
+          word-wrap: break-word !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .heading, h2 {
+          font-size: 1.2rem !important;
+          padding: 0 0.5rem !important;
+        }
+      }
     </style>
   </head>
   <body>
     <header class="new-responsive-header">
       <div class="new-header-container">
         <div class="new-logo">
-          <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          <a href="../index.html">
+            <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions" style="height: 70px; width: auto;">
+          </a>
         </div>
         <nav class="new-nav" id="nav-menu">
           <a href="../index.html">Home</a>
@@ -237,12 +283,7 @@
                     <a href="../contact.html#consultation" class="button w-button">Schedule a Consultation</a>
                   </div>
                 </div>
-                <img
-                  src="https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e6f2c42414abaeaff5d831_marble%202%20(1).jpg"
-                  loading="lazy"
-                  alt=""
-                  class="hero_image object-position-left"
-                />
+
               </div>
             </div>
           </div>
@@ -254,9 +295,9 @@
               <div class="content_grid">
                 <div class="what_we_offer_thumbnail">
                   <img
-                    src="https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e6f2c42414abaeaff5d831_marble%202%20(1).jpg"
+                    src="services-images/Business Intelligence (2).png"
                     loading="lazy"
-                    alt="Trinity Technology Solutions Team"
+                    alt="Business Intelligence Team"
                     class="thumbnail_large"
                   />
                 </div>
@@ -267,18 +308,18 @@
                     <div class="content_richtext w-richtext">
                       <p>Having data isn't enough; turning it into insights is what truly makes a difference. At Trinity Technology Solutions, we help you understand your data through easy-to-use business intelligence and reporting tools. With a clear dashboard and automated reports, you will see how your business is doing, so you can work fast, make smart plans, and deliver your goals with confidence.</p>
                       
-                      <h3 data-aos="fade-up">Key Business Intelligence Features & Capabilities:</h3>
-                      <h4>Data Visualization:</h4>
+                      <h2 data-aos="fade-up">Key Business Intelligence Features & Capabilities:</h2>
+                      <h3>Data Visualization:</h3>
                       <p>
                         Create interactive dashboards and reports for clear data insights.
                       </p>
-                      <h4>Analytics Implementation:</h4>
+                      <h3>Analytics Implementation:</h3>
                       <p>Deploy advanced analytics tools and KPI tracking systems.</p>
-                      <h4>Real-time Reporting:</h4>
+                      <h3>Real-time Reporting:</h3>
                       <p>
                         Monitor business performance with live data feeds and automated alerts.
                       </p>
-                      <h4>Strategic Insights:</h4>
+                      <h3>Strategic Insights:</h3>
                       <p>
                         Generate actionable recommendations based on data analysis.
                       </p>
@@ -312,9 +353,9 @@
                 </div>
                 <div class="content_thumbnail_wr reverse">
                   <img
-                    src="https://cdn.prod.website-files.com/68c8ed023c167a28e6d843cb/68c8ed023c167a28e6d844a0_Img%20(4).jpg"
+                    src="services-images/Business Intelligence (1).png"
                     loading="lazy"
-                    alt=""
+                    alt="Business Intelligence Process"
                     class="thumbnail_416"
                   />
                 </div>
@@ -323,9 +364,20 @@
           </div>
         </section>
         
+        <section class="back-to-services-section" data-aos="fade-up">
+          <div class="padding-global">
+            <div class="container-large">
+              <a href="../services.html" class="back-to-services-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Services
+              </a>
+            </div>
+          </div>
+        </section>
 
-
-        <footer style="background: #1a1a1a; color: #ffffff; padding: 4rem 0 2rem; position: relative; overflow: hidden;">
+        <footer style="background: #1a1a1a; color: #ffffff; padding: 4rem 0 2rem; position: relative; overflow: hidden; margin-top: 0;">
           <!-- Large background text -->
           <div style="position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); font-size: 12rem; font-weight: 900; color: rgba(255,255,255,0.03); white-space: nowrap; z-index: 1; pointer-events: none;">Trinity Technology</div>
 
@@ -349,6 +401,7 @@
                   <a href="../services.html" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;">Services</a>
                   <a href="../about-us.html" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;">About</a>
                   <a href="../contact.html" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;">Contact</a>
+                  <a href="../career.html" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;">Career</a>
                 </div>
               </div>
               

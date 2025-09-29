@@ -9,13 +9,13 @@
 >
   <head>
     <meta charset="utf-8" />
-    <title>About Us - Webflow HTML website template</title>
+    <title>Data and Analytics Services | Trinity Technology Solutions</title>
     <meta
       content="Learn more about Zeal Consult, your partner in business growth through comprehensive website audits, competitive analysis, and data-driven digital strategies."
       name="description"
     />
     <meta
-      content="About Us - Webflow HTML website template"
+      content="About Us - Trinity Technology Solutions"
       property="og:title"
     />
     <meta
@@ -27,7 +27,7 @@
       property="og:image"
     />
     <meta
-      content="About Us - Webflow HTML website template"
+      content="About Us - Trinity Technology Solutions"
       property="twitter:title"
     />
     <meta
@@ -70,28 +70,256 @@
     <link rel="stylesheet" href="trinity-styles.css" />
     <link rel="stylesheet" href="new-responsive-header.css" />
     <style>
+      .new-responsive-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 1rem 0;
+      }
+      .new-header-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .new-logo img {
+        height: 70px;
+        width: auto;
+      }
+      .new-nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .new-nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .new-nav a:hover {
+        color: #22396b;
+      }
+      .new-get-started {
+        background: #22396b !important;
+        color: white !important;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+      }
+      .new-get-started:hover {
+        background: #1a2d5a !important;
+        color: white !important;
+      }
+      .new-hamburger {
+        display: none;
+      }
+      body {
+        padding-top: 80px;
+      }
+    </style>
+    <link rel="stylesheet" href="consistent-header-spacing.css" />
+    <style>
       .container-large, .container-medium, .container-small {
         max-width: 80% !important;
       }
       @media (max-width: 768px) {
         .container-large, .container-medium, .container-small {
-          max-width: 95% !important;
+          max-width: 100% !important;
+          padding: 0 0.5rem !important;
+        }
+        .padding-global {
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .container-large, .container-medium, .container-small {
+          max-width: 100% !important;
+          padding: 0 0.25rem !important;
+        }
+        .padding-global {
+          padding-left: 0.25rem !important;
+          padding-right: 0.25rem !important;
         }
       }
     </style>
 
     <style>
-      body, html { overflow-x: hidden !important; max-width: 100vw !important; }
+      body, html { 
+        overflow-x: hidden !important; 
+        max-width: 100vw !important;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      body::-webkit-scrollbar,
+      html::-webkit-scrollbar,
+      section::-webkit-scrollbar,
+      div::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      section, div {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
       * { box-sizing: border-box; }
       .container-large, .container-medium, .container-small { max-width: 100% !important; overflow-x: hidden; }
       @media (max-width: 768px) { [data-aos] { transform: none !important; } }
+      
+      /* Advanced Professional Styles */
+      .professional-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .professional-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+      }
+      .professional-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: left 0.6s;
+      }
+      .professional-card:hover::before {
+        left: 100%;
+      }
+      
+      @media (max-width: 768px) {
+        .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        .story-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+        .values-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        .features-grid { grid-template-columns: 1fr !important; }
+        
+        /* Mobile Navigation Fixes */
+        .new-responsive-header {
+          padding: 0.5rem 0 !important;
+        }
+        .new-header-container {
+          padding: 0 1rem !important;
+        }
+        .new-logo img {
+          height: 40px !important;
+          margin-left: 0 !important;
+        }
+        
+        /* Fix hero section text overflow */
+        section h1 {
+          font-size: 2rem !important;
+          line-height: 1.2 !important;
+          padding: 0 1rem !important;
+          word-wrap: break-word !important;
+          overflow-wrap: break-word !important;
+          hyphens: auto !important;
+          text-align: center !important;
+        }
+        
+        section .container-large {
+          padding: 0 1rem !important;
+        }
+        
+        section p {
+          font-size: 1rem !important;
+          padding: 0 1rem !important;
+          line-height: 1.5 !important;
+          text-align: center !important;
+        }
+        .new-nav {
+          position: fixed !important;
+          top: 70px !important;
+          left: 0 !important;
+          right: 0 !important;
+          background: white !important;
+          flex-direction: column !important;
+          padding: 2rem 1rem !important;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+          transform: translateY(-100%) !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          transition: all 0.3s ease !important;
+          z-index: 999 !important;
+        }
+        .new-nav.active {
+          transform: translateY(0) !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        .new-nav a {
+          padding: 0.75rem 0 !important;
+          border-bottom: 1px solid #f0f0f0 !important;
+          width: 100% !important;
+          text-align: center !important;
+        }
+        .new-get-started {
+          margin-top: 1rem !important;
+          border: none !important;
+          text-align: center !important;
+        }
+        .new-hamburger {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 4px !important;
+          cursor: pointer !important;
+        }
+        .new-hamburger span {
+          width: 25px !important;
+          height: 3px !important;
+          background: #333 !important;
+          transition: 0.3s !important;
+        }
+        
+        .new-hamburger {
+          margin-left: auto !important;
+          margin-right: 1rem !important;
+        }
+        
+        .new-header-container {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          width: 100% !important;
+        }
+        
+        /* Additional mobile text fixes */
+        .hero-grid {
+          padding: 0 1rem !important;
+        }
+        
+        .hero_content {
+          padding: 0 1rem !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .values-grid { grid-template-columns: 1fr !important; }
+        
+        /* Extra small mobile fixes */
+        .new-logo img {
+          height: 35px !important;
+        }
+        .new-header-container {
+          padding: 0 0.5rem !important;
+        }
+      }
     </style>
   </head>
   <body>
     <header class="new-responsive-header">
       <div class="new-header-container">
         <div class="new-logo">
-          <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          <a href="index.html">
+            <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8eeafa4b5417495dddb90_Trinity%20Logo%20PNG%20(3).png" alt="Trinity Technology Solutions">
+          </a>
         </div>
         <nav class="new-nav" id="nav-menu">
           <a href="index.html">Home</a>
@@ -99,7 +327,7 @@
           <a href="about-us.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="career.html">Career</a>
-          <a href="#footer" class="new-get-started">Get Started</a>
+          <a href="contact.html" class="new-get-started">Get Started</a>
         </nav>
         <div class="new-hamburger" id="hamburger">
           <span></span>
@@ -115,454 +343,187 @@
     </script>
 
     <div class="page-wrapper">
-      <div class="global-styles w-embed">
-        <style>
-          /* Make text look crisper and more legible in all browsers */
-          /*body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}*/
-
-          /* Focus state style for keyboard navigation for the focusable elements */
-          *[tabindex]:focus-visible,
-          input[type="file"]:focus-visible {
-            outline: 0.125rem solid #4d65ff;
-            outline-offset: 0.125rem;
-          }
-
-          /* Set color style to inherit */
-          .inherit-color * {
-            color: inherit;
-          }
-
-          /* Get rid of top margin on first element in any rich text element */
-          .w-richtext > :not(div):first-child,
-          .w-richtext > div:first-child > :first-child {
-            margin-top: 0 !important;
-          }
-
-          /* Get rid of bottom margin on last element in any rich text element */
-          .w-richtext > :last-child,
-          .w-richtext ol li:last-child,
-          .w-richtext ul li:last-child {
-            margin-bottom: 0 !important;
-          }
-
-          /* Make sure containers never lose their center alignment */
-          .container-medium,
-          .container-small,
-          .container-large {
-            margin-right: auto !important;
-            margin-left: auto !important;
-          }
-
-          /* 
-Make the following elements inherit typography styles from the parent and not have hardcoded values. 
-Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
-Uncomment this CSS to use it in the project. Leave this message for future hand-off.
-*/
-          /*
-a,
-.w-input,
-.w-select,
-.w-tab-link,
-.w-nav-link,
-.w-dropdown-btn,
-.w-dropdown-toggle,
-.w-dropdown-link {
-  color: inherit;
-  text-decoration: inherit;
-  font-size: inherit;
-}
-*/
-
-          /* Apply "..." after 3 lines of text */
-          .text-style-3lines {
-            display: -webkit-box;
-            overflow: hidden;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-          }
-
-          /* Apply "..." after 2 lines of text */
-          .text-style-2lines {
-            display: -webkit-box;
-            overflow: hidden;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-          }
-
-          /* These classes are never overwritten */
-          .hide {
-            display: none !important;
-          }
-
-          @media screen and (max-width: 991px) {
-            .hide,
-            .hide-tablet {
-              display: none !important;
-            }
-          }
-          @media screen and (max-width: 767px) {
-            .hide-mobile-landscape {
-              display: none !important;
-            }
-          }
-          @media screen and (max-width: 479px) {
-            .hide-mobile {
-              display: none !important;
-            }
-          }
-
-          .margin-0 {
-            margin: 0rem !important;
-          }
-
-          .padding-0 {
-            padding: 0rem !important;
-          }
-
-          .spacing-clean {
-            padding: 0rem !important;
-            margin: 0rem !important;
-          }
-
-          .margin-top {
-            margin-right: 0rem !important;
-            margin-bottom: 0rem !important;
-            margin-left: 0rem !important;
-          }
-
-          .padding-top {
-            padding-right: 0rem !important;
-            padding-bottom: 0rem !important;
-            padding-left: 0rem !important;
-          }
-
-          .margin-right {
-            margin-top: 0rem !important;
-            margin-bottom: 0rem !important;
-            margin-left: 0rem !important;
-          }
-
-          .padding-right {
-            padding-top: 0rem !important;
-            padding-bottom: 0rem !important;
-            padding-left: 0rem !important;
-          }
-
-          .margin-bottom {
-            margin-top: 0rem !important;
-            margin-right: 0rem !important;
-            margin-left: 0rem !important;
-          }
-
-          .padding-bottom {
-            padding-top: 0rem !important;
-            padding-right: 0rem !important;
-            padding-left: 0rem !important;
-          }
-
-          .margin-left {
-            margin-top: 0rem !important;
-            margin-right: 0rem !important;
-            margin-bottom: 0rem !important;
-          }
-
-          .padding-left {
-            padding-top: 0rem !important;
-            padding-right: 0rem !important;
-            padding-bottom: 0rem !important;
-          }
-
-          .margin-horizontal {
-            margin-top: 0rem !important;
-            margin-bottom: 0rem !important;
-          }
-
-          .padding-horizontal {
-            padding-top: 0rem !important;
-            padding-bottom: 0rem !important;
-          }
-
-          .margin-vertical {
-            margin-right: 0rem !important;
-            margin-left: 0rem !important;
-          }
-
-          .padding-vertical {
-            padding-right: 0rem !important;
-            padding-left: 0rem !important;
-          }
-          
-          /* Force FAQ content visibility with maximum specificity */
-          .faq_section .faq_container .faq_item .faq_content_block .faq_content_inner {
-            height: auto !important;
-            opacity: 1 !important;
-            display: block !important;
-            visibility: visible !important;
-            overflow: visible !important;
-            max-height: none !important;
-          }
-          
-          .faq_section .faq_container .faq_item .faq_content_block .faq_content_inner p {
-            color: #000000 !important;
-            background-color: #ffffff !important;
-            padding: 15px !important;
-            border-radius: 8px !important;
-            margin: 10px 0 !important;
-            font-weight: 600 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            font-size: 16px !important;
-          }
-          
-          .faq_item.w-dropdown .w-dropdown-list {
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-          }
-
-          /* Increase about page hero image size */
-          .fifty_fifty_comp .fifty_fifty-grid-right {
-            flex: 3 !important;
-          }
-          
-          .fifty_fifty_comp .fifty_fifty-grid-left {
-            flex: 0.5 !important;
-          }
-
-          /* Increase left side image size when image is on left */
-          .fifty_fifty_comp .fifty_fifty-grid-left:has(.fifty_fifty_img_wr) {
-            flex: 3 !important;
-          }
-
-          .fifty_fifty_comp .fifty_fifty_img_wr {
-            width: 120% !important;
-            height: auto !important;
-          }
-
-          .fifty_fifty_comp .fifty_fifty-grid-right {
-            max-width: none !important;
-            width: 100% !important;
-          }
-
-          .fifty_fifty_comp .fifty_fifty-grid-left {
-            max-width: none !important;
-            width: 100% !important;
-          }
-
-          .fifty_fifty_comp .image_fit {
-            width: 100% !important;
-            height: auto !important;
-            object-fit: cover !important;
-            border-radius: 12px !important;
-          }
-
-          /* Modern Who We Are heading styling */
-          .who-we-are-modern {
-            padding-left: 1.5rem !important;
-            border-left: 5px solid #00d4ff !important;
-            opacity: 1 !important;
-            transform: translateX(0) !important;
-            animation: slideInLeft 1s ease-out 0.5s forwards !important;
-            font-size: 5rem !important;
-            letter-spacing: 0.1em !important;
-            word-spacing: 0.3em !important;
-          }
-
-          @keyframes slideInLeft {
-            from {
-              opacity: 0 !important;
-              transform: translateX(-30px) !important;
-            }
-            to {
-              opacity: 1 !important;
-              transform: translateX(0) !important;
-            }
-          }
-
-          /* Reduce width for Why Client Choose Us section */
-          .helping_business_block .container-large {
-            max-width: 60% !important;
-          }
-
-          @media (max-width: 768px) {
-            .helping_business_block .container-large {
-              max-width: 95% !important;
-            }
-          }
-        </style>
-      </div>
       <main class="main-wrapper">
 
-        <section style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover; padding: 120px 0; color: white;" data-aos="fade-up">
-          <div class="padding-global">
-            <div class="container-large" style="text-align: center;">
-              <div
-                data-w-id="330cc851-6a14-19f0-32aa-ccd9bdc04159"
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;"
-              >
+        <!-- Hero Section -->
+        <section style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop') center/cover; padding: 120px 0; color: white; position: relative; overflow: hidden;" data-aos="fade-up">
+          <div class="padding-global" style="position: relative; z-index: 2;">
+            <div class="container-large" style="max-width: 1400px; margin: 0 auto;">
+              <div style="text-align: center; margin-bottom: 4rem;">
+                <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.1); border-radius: 50px; margin-bottom: 2rem; backdrop-filter: blur(10px);" data-aos="fade-up">
+                  <span style="color: #ffffff; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px;">ABOUT TRINITY</span>
+                </div>
+                <h1 style="font-size: 4rem; font-weight: 800; margin-bottom: 2rem; line-height: 1.1; background: linear-gradient(45deg, #ffffff, #e0e7ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" data-aos="fade-up" data-aos-delay="200">Transforming Data<br>Into Growth</h1>
+                <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto; line-height: 1.6;" data-aos="fade-up" data-aos-delay="400">With over 100 years of combined leadership, we are your trusted partner in analyzing, automating, and simplifying your data journey.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                <div class="fifty_fifty-grid-left" style="display: none;">
-                  <div>
-                    <div class="title-small is-neon">WHO WE ARE</div>
-                    <div class="padding-bottom padding-xsmall"></div>
-                    <p class="paragraph-2" style="color: white; font-size: 1.8rem; line-height: 1.4;">
-                      <strong class="bold-text-3" style="color: white; font-weight: 600;"
-                        >Trinity began as a specialist staffing company, but we
-                        didn’t stop there. With over 100 years of combined
-                        leadership and deep HR and data expertise, we understand
-                        your challenges and generate a measurable impact.<br /><br />With
-                        a sharp understanding of talent, technology, and
-                        business challenges, we have evolved into a
-                        comprehensive software solutions provider. Today, we
-                        stand at the forefront of Data and AI innovation,
-                        empowering businesses to achieve digital transformation
-                        with confidence.<br /><br />This synergy is our greatest
-                        strength and your biggest advantage. From data
-                        engineering and AI-driven platforms to enterprise
-                        software and digital products, our diverse team
-                        consistently delivers outcomes that matter, efficiently,
-                        effectively, and with dedication.</strong
-                      >
-                    </p>
+        <!-- Story Section -->
+        <section style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&h=1080&fit=crop') center/cover; padding: 100px 0; position: relative;">
+          <div class="padding-global">
+            <div class="container-large" style="max-width: 1400px; margin: 0 auto;">
+              <div class="story-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+                <div data-aos="fade-right">
+                  <div style="position: relative;">
+                    <div style="position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%;"></div>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Our Story" style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
                   </div>
                 </div>
-              <div class="who-we-are-modern" style="color: white; margin-bottom: 2rem; font-weight: 700; line-height: 1.2;">Who<br>We<br>Are</div>
-              <div style="color: white; font-size: 1.3rem; line-height: 1.8; max-width: 900px; margin: 0 auto; text-align: left;">
-                <p style="margin-bottom: 2.5rem; text-align: justify;">Trinity began as a specialist staffing company, but we didn't stop there. With over 100 years of combined leadership and deep HR and data expertise, we understand your challenges and generate a measurable impact.</p>
-                <p style="margin-bottom: 2.5rem; text-align: justify;">With a sharp understanding of talent, technology, and business challenges, we have evolved into a comprehensive software solutions provider. Today, we stand at the forefront of Data and AI innovation, empowering businesses to achieve digital transformation with confidence.</p>
-                <p style="margin: 0; text-align: justify;">This synergy is our greatest strength and your biggest advantage. From data engineering and AI-driven platforms to enterprise software and digital products, our diverse team consistently delivers outcomes that matter, efficiently, effectively, and with dedication.</p>
-              </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          data-w-id="8e2bf262-8b65-4012-d450-963cd06e86b1"
-          class="helping_business_block"
-        >
-          <div class="padding-global">
-            <div class="container-large">
-              <div
-                data-w-id="33b3562d-1177-e0f5-137f-6c89646d532b"
-                class="center_title_block"
-              >
-                <h2 data-aos="fade-up">Why Client Choose Us</h2>
-              </div>
-              <div class="padding-bottom padding-large"></div>
-              <div class="details_card_wr" data-aos="zoom-in">
-                <div
-                  data-w-id="3db1cb65-2920-aa4e-4966-019e01f05093"
-                  class="detail_card"
-                >
-                  <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84443_Our%20Expertise-1.svg"
-                    loading="lazy"
-                    alt=""
-                    class="icon_60"
-                  />
-                  <h5>Certified Databricks Partnership &amp; Expertise</h5>
-                </div>
-                <div
-                  data-w-id="3db1cb65-2920-aa4e-4966-019e01f05099"
-                  class="detail_card"
-                >
-                  <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84445_Our%20Approach.svg"
-                    loading="lazy"
-                    alt=""
-                    class="icon_60"
-                  />
-                  <h5>
-                    Dedicated Data Engineering Specialists for Every
-                    Projectproach
-                  </h5>
-                </div>
-                <div
-                  data-w-id="3db1cb65-2920-aa4e-4966-019e01f0509f"
-                  class="detail_card"
-                >
-                  <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84446_Where%20We%20Operate.svg"
-                    loading="lazy"
-                    alt=""
-                    class="icon_60"
-                  />
-                  <h5>Agile Delivery with Transparent Project Managemen</h5>
-                </div>
-                <div
-                  data-w-id="5f72c401-5cce-30df-e497-107af099c8f1"
-                  class="detail_card"
-                >
-                  <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84421_Icon%20(1).svg"
-                    loading="lazy"
-                    alt="What we do?"
-                    class="icon_60"
-                  />
-                  <h5>24/7 Support and Strategic Consulting Calls</h5>
+                <div data-aos="fade-left">
+                  <div style="margin-bottom: 1.5rem;">
+                    <span style="color: #667eea; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Our Story</span>
+                  </div>
+                  <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 2rem; line-height: 1.2;">From Staffing Specialists to Data Innovation Leaders</h2>
+                  <div style="space-y: 1.5rem;">
+                    <p style="color: #4a5568; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">Trinity began as a specialist staffing company, but we didn't stop there. With over 100 years of combined leadership and deep HR and data expertise, we understand your challenges and generate a measurable impact.</p>
+                    <p style="color: #4a5568; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">With a sharp understanding of talent, technology, and business challenges, we have evolved into a comprehensive software solutions provider. Today, we stand at the forefront of Data and AI innovation, empowering businesses to achieve digital transformation with confidence.</p>
+                    <p style="color: #4a5568; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">This synergy is our greatest strength and your biggest advantage. From data engineering and AI-driven platforms to enterprise software and digital products, our diverse team consistently delivers outcomes that matter, efficiently, effectively, and with dedication.</p>
+                  </div>
+                  <a href="services.html" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+                    Explore Our Services
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                      <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="global-impact-section" style="background: #f8f9fa; padding: 80px 0;" data-aos="fade-up">
-          <div class="padding-global">
-            <div class="container-large">
-              <div class="center_title_block" style="text-align: center; margin-bottom: 60px;">
-                <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin-bottom: 1rem;" data-aos="fade-up">Our Core Values</h2>
-                <p style="color: #666; font-size: 1.2rem; margin: 0;">The DNA of how we think, build, and lead.</p>
+
+        <!-- Why Choose Us Section -->
+        <section style="background: linear-gradient(rgba(248,250,252,0.9), rgba(248,250,252,0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop') center/cover; padding: 100px 0; position: relative;">
+          <div class="padding-global" style="position: relative; z-index: 2;">
+            <div class="container-large" style="max-width: 1200px; margin: 0 auto;">
+              <div style="text-align: center; margin-bottom: 4rem;">
+                <div style="display: inline-block; padding: 0.5rem 1.5rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 50px; margin-bottom: 1.5rem; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px;" data-aos="fade-up">WHY CHOOSE US</div>
+                <h2 style="font-size: 3rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem; line-height: 1.2;" data-aos="fade-up" data-aos-delay="200">What Sets Us Apart</h2>
+                <p style="color: #4a5568; font-size: 1.2rem; max-width: 600px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="400">Our unique combination of expertise, innovation, and dedication makes us the ideal partner for your data transformation journey.</p>
               </div>
-              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
-                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4f46e5, #7c3aed); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <div class="features-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div class="professional-card" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-delay="200">
+                  <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; transform: translate(30px, -30px);"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                      <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84443_Our%20Expertise-1.svg" alt="" style="width: 28px; height: 28px; filter: brightness(0) invert(1);">
+                    </div>
+                    <h3 style="color: #1a202c; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.3;">Certified Databricks Partnership & Expertise</h3>
+                    <p style="color: #4a5568; line-height: 1.6; margin: 0;">Leverage our certified expertise and strategic partnership with Databricks to unlock the full potential of your data infrastructure.</p>
+                  </div>
+                </div>
+                <div class="professional-card" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-delay="400">
+                  <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; transform: translate(30px, -30px);"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                      <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84445_Our%20Approach.svg" alt="" style="width: 28px; height: 28px; filter: brightness(0) invert(1);">
+                    </div>
+                    <h3 style="color: #1a202c; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.3;">Dedicated Data Engineering Specialists for Every Project</h3>
+                    <p style="color: #4a5568; line-height: 1.6; margin: 0;">Our specialized team of data engineers brings deep technical expertise and industry knowledge to every project we undertake.</p>
+                  </div>
+                </div>
+                <div class="professional-card" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-delay="600">
+                  <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; transform: translate(30px, -30px);"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                      <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84446_Where%20We%20Operate.svg" alt="" style="width: 28px; height: 28px; filter: brightness(0) invert(1);">
+                    </div>
+                    <h3 style="color: #1a202c; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.3;">Agile Delivery with Transparent Project Management</h3>
+                    <p style="color: #4a5568; line-height: 1.6; margin: 0;">Experience seamless project execution with our agile methodology and transparent communication throughout every phase.</p>
+                  </div>
+                </div>
+                <div class="professional-card" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-delay="800">
+                  <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; transform: translate(30px, -30px);"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                      <img src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d84421_Icon%20(1).svg" alt="" style="width: 28px; height: 28px; filter: brightness(0) invert(1);">
+                    </div>
+                    <h3 style="color: #1a202c; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.3;">24/7 Support and Strategic Consulting Calls</h3>
+                    <p style="color: #4a5568; line-height: 1.6; margin: 0;">Benefit from round-the-clock support and strategic guidance to ensure your data initiatives deliver maximum business value.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); padding: 100px 0; color: white; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"hexagon\" width=\"50\" height=\"43.4\" patternUnits=\"userSpaceOnUse\"><polygon points=\"25,0 50,14.4 50,28.9 25,43.4 0,28.9 0,14.4\" fill=\"none\" stroke=\"%23ffffff\" stroke-width=\"0.5\" opacity=\"0.1\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23hexagon)\"/></svg>'); opacity: 0.3;"></div>
+          <div class="padding-global" style="position: relative; z-index: 2;">
+            <div class="container-large" style="max-width: 1400px; margin: 0 auto;">
+              <div style="text-align: center; margin-bottom: 4rem;">
+                <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.1); border-radius: 50px; margin-bottom: 1.5rem; backdrop-filter: blur(10px);" data-aos="fade-up">
+                  <span style="color: #ffffff; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px;">OUR FOUNDATION</span>
+                </div>
+                <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2;" data-aos="fade-up" data-aos-delay="200">Core Values That Drive Us</h2>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; max-width: 600px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="400">The DNA of how we think, build, and lead in every project we undertake.</p>
+              </div>
+              <div class="values-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <div class="professional-card" style="background: rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); text-align: center;" data-aos="fade-up" data-aos-delay="200">
+                  <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
                       <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                       <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                       <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                     </svg>
                   </div>
-                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Innovation</h3>
-                  <p style="color: #666; line-height: 1.6; margin: 0;">We embrace the power of emerging technologies to create solutions that are smarter, faster, and future-ready.</p>
+                  <h3 style="color: #ffffff; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Innovation</h3>
+                  <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0; font-size: 0.95rem;">We embrace the power of emerging technologies to create solutions that are smarter, faster, and future-ready.</p>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
-                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ec4899, #f97316); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <div class="professional-card" style="background: rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); text-align: center;" data-aos="fade-up" data-aos-delay="400">
+                  <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #ec4899, #f97316); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
                       <path d="M12 15L8 11L9.41 9.59L12 12.17L14.59 9.59L16 11L12 15Z" fill="currentColor"/>
                       <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
                     </svg>
                   </div>
-                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Excellence</h3>
-                  <p style="color: #666; line-height: 1.6; margin: 0;">We strive for perfection in everything we do, from the code we write to the relationships we build.</p>
+                  <h3 style="color: #ffffff; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Excellence</h3>
+                  <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0; font-size: 0.95rem;">We strive for perfection in everything we do, from the code we write to the relationships we build.</p>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
-                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                      <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                <div class="professional-card" style="background: rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); text-align: center;" data-aos="fade-up" data-aos-delay="600">
+                  <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                      <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>l="currentColor"/>74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
                     </svg>
                   </div>
-                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Commitment</h3>
-                  <p style="color: #666; line-height: 1.6; margin: 0;">We fully commit to understanding our clients' challenges and solving them with trust, focus, and results.</p>
+                  <h3 style="color: #ffffff; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Commitment</h3>
+                  <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0; font-size: 0.95rem;">We fully commit to understanding our clients' challenges and solving them with trust, focus, and results.</p>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
-                  <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <div class="professional-card" style="background: rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); text-align: center;" data-aos="fade-up" data-aos-delay="800">
+                  <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
                       <path d="M16 7C16 9.21 14.21 11 12 11C9.79 11 8 9.21 8 7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7ZM12 14C16.42 14 20 15.79 20 18V21H4V18C4 15.79 7.58 14 12 14Z" fill="currentColor"/>
                     </svg>
                   </div>
-                  <h3 style="color: #333; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;" data-aos="fade-up">Collaboration</h3>
-                  <p style="color: #666; line-height: 1.6; margin: 0;">We grow stronger together across teams, with clients, and through partnerships, believing in open minds and shared wins.</p>
+                  <h3 style="color: #ffffff; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Collaboration</h3>
+                  <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0; font-size: 0.95rem;">We grow stronger together across teams, with clients, and through partnerships, believing in open minds and shared wins.</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- CTA Section -->
+        <section style="background: #ffffff; padding: 80px 0;">
+          <div class="padding-global">
+            <div class="container-large" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+              <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 4rem 3rem; border-radius: 30px; color: white; position: relative; overflow: hidden;" data-aos="fade-up">
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                <div style="position: relative; z-index: 2;">
+                  <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">Ready to Transform Your Data?</h2>
+                  <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">Let's discuss how Trinity can help you unlock the full potential of your data and drive meaningful business growth.</p>
+                  <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" style="background: white; color: #667eea; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Get Started Today</a>
+                    <a href="services.html" style="background: rgba(255,255,255,0.1); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">View Our Services</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <footer id="footer" style="background: #1a1a1a; color: #ffffff; padding: 6rem 0 4rem; position: relative; overflow: hidden; min-height: 400px;">
           <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 12rem; font-weight: 900; color: rgba(255,255,255,0.05); white-space: nowrap; z-index: 1; pointer-events: none;">Trinity Technology</div>
@@ -583,6 +544,7 @@ a,
                   <a href="services.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Services</a>
                   <a href="about-us.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">About</a>
                   <a href="contact.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Contact</a>
+                  <a href="career.html" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Career</a>
                 </div>
               </div>
               
@@ -662,127 +624,6 @@ a,
         </footer>
       </main>
     </div>
-    <script
-      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68c8ed013c167a28e6d84332"
-      type="text/javascript"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Contact Modal -->
-    <div id="contactModal" class="contact-modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeContactModal()">&times;</span>
-        <h2 data-aos="fade-up">Get in Touch</h2>
-        <form id="contactForm" onsubmit="submitContactForm(event)">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="tel" name="phone" placeholder="Your Phone" required>
-          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-    </div>
-
-    <style>
-      .contact-modal {
-        display: none;
-        position: fixed;
-        z-index: 10000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-      }
-      .modal-content {
-        background-color: white;
-        margin: 5% auto;
-        padding: 2rem;
-        border-radius: 12px;
-        width: 90%;
-        max-width: 500px;
-        position: relative;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      }
-      .close-btn {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        font-size: 2rem;
-        cursor: pointer;
-        color: #666;
-      }
-      .close-btn:hover {
-        color: #000;
-      }
-      .modal-content h2 {
-        margin: 0 0 1.5rem 0;
-        color: #22396b;
-      }
-      .modal-content input,
-      .modal-content textarea {
-        width: 100%;
-        padding: 0.75rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        font-size: 1rem;
-        box-sizing: border-box;
-      }
-      .modal-content input:focus,
-      .modal-content textarea:focus {
-        outline: none;
-        border-color: #22396b;
-      }
-      .submit-btn {
-        background: #22396b;
-        color: white;
-        padding: 0.75rem 2rem;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1rem;
-        width: 100%;
-      }
-      .submit-btn:hover {
-        background: #1a2d5a;
-      }
-      @media (max-width: 768px) {
-        .modal-content {
-          margin: 10% auto;
-          padding: 1.5rem;
-          width: 95%;
-        }
-      }
-    </style>
-
-    <script>
-      function openContactModal() {
-        document.getElementById('contactModal').style.display = 'block';
-        document.body.style.overflow = 'hidden';
-      }
-      
-      function closeContactModal() {
-        document.getElementById('contactModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-      
-      function submitContactForm(event) {
-        event.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
-        closeContactModal();
-        document.getElementById('contactForm').reset();
-      }
-      
-      // Close modal when clicking outside
-      window.onclick = function(event) {
-        const modal = document.getElementById('contactModal');
-        if (event.target === modal) {
-          closeContactModal();
-        }
-      }
-    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
