@@ -48,6 +48,8 @@
       href="../../cdn.prod.website-files.com/images/favicon.ico"
       rel="apple-touch-icon"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../trinity-styles.css" />
       <link rel="stylesheet" href="../fix-logos.css" />
     <link rel="stylesheet" href="../increase-width.css" />
     <link rel="stylesheet" href="reduced-headers.css" />
@@ -196,9 +198,49 @@
     </style>
     <style>
       body, html { overflow-x: hidden !important; max-width: 100vw !important; }
-      * { box-sizing: border-box; }
-      
-      @media (max-width: 768px) { [data-aos] { transform: none !important; } }
+      * { 
+        box-sizing: border-box;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      *::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      .container-large, .container-medium, .container-small { overflow-x: hidden !important; }
+      .content_grid, .content_grid_left, .content_thumbnail_wr { overflow-x: hidden !important; }
+      .why_it_matters { overflow-x: hidden !important; }
+      section, div, .content_richtext, .w-richtext {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      section::-webkit-scrollbar,
+      div::-webkit-scrollbar,
+      .content_richtext::-webkit-scrollbar,
+      .w-richtext::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      @media (max-width: 768px) { 
+        [data-aos] { transform: none !important; }
+        .heading, h2 {
+          font-size: 1.5rem !important;
+          line-height: 1.3 !important;
+          text-align: center !important;
+          padding: 0 1rem !important;
+          margin-bottom: 1.5rem !important;
+          word-wrap: break-word !important;
+          overflow-wrap: break-word !important;
+        }
+        .bold-text {
+          display: block !important;
+          word-wrap: break-word !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .heading, h2 {
+          font-size: 1.2rem !important;
+          padding: 0 0.5rem !important;
+        }
+      }
     </style>
 </head>
   <body>
@@ -242,6 +284,9 @@
             -ms-transform: none !important;
           }
         </style>
+      </div>
+      <div class="global-styles w-embed">
+
       </div>
       <main class="main-wrapper overflow-hidden">
         <section class="section_hero" data-aos="fade-up">
