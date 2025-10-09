@@ -4,9 +4,11 @@
   "description": "Trinity Technology Solutions Backend API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node hostinger-deploy.js",
     "dev": "nodemon server.js",
-    "test": "node test-backend.js"
+    "test": "node test-backend.js",
+    "test-ceipal": "node test-ceipal.js",
+    "hostinger": "node hostinger-deploy.js"
   },
   "dependencies": {
     "express": "^4.18.2",

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceipal API Test</title>
+</head>
+<body>
+    <h1>Ceipal API Test</h1>
+    <button onclick="testAPI()">Test API Connection</button>
+    <div id="results"></div>
+
+    <script>
+        const CEIPAL_CONFIG = {
+            apiKey: 'YjRoeE5zeXJuNUV2eHRLdUVTY1JUdz09',
+            cpId: 'Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09'
+        };
+
+        async function testAPI() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p>Testing API...</p>';
+            
+            const iframeUrl = `https://jobsapi.ceipal.com/APISource/v3/index.html?api_key=${CEIPAL_CONFIG.apiKey}&cp_id=${CEIPAL_CONFIG.cpId}`;
+            
+            results.innerHTML = `
+                <h3>Iframe Test:</h3>
+                <p><a href="${iframeUrl}" target="_blank">Open Ceipal Jobs in New Tab</a></p>
+                <iframe src="${iframeUrl}" width="100%" height="400" style="border:1px solid #ccc;"></iframe>
+            `;
+        }
+    </script>
+</body>
+</html>

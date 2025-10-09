@@ -1,113 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Current Job Openings - Trinity Technology Solutions</title>
-    <meta content="Explore current job opportunities at Trinity Technology Solutions. Join our team of data experts and technology professionals." name="description" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    
-    <link href="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/css/trinity-website-875b5b.webflow.shared.b21e2f13f.css" rel="stylesheet" type="text/css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="trinity-styles.css" />
-    
-    <style>
-        .new-responsive-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        .new-header-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .new-logo img {
-            height: 70px;
-            width: auto;
-        }
-        .new-nav {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        .new-nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .new-nav a:hover {
-            color: #22396b;
-        }
-        .new-get-started {
-            background: #22396b !important;
-            color: white !important;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-        }
-        .new-hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-        .new-hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: 0.3s;
-        }
-        body {
-            padding-top: 80px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f8fafc;
-        }
-        
-
-        
-
-        
-        @media (max-width: 768px) {
-            .new-nav {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 2rem 1rem;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                z-index: 999;
-            }
-            .new-nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            .new-hamburger {
-                display: flex;
-            }
-            div[style*="grid-template-columns: 300px 1fr"] {
-                grid-template-columns: 1fr !important;
-                padding: 1rem !important;
-            }
-        }
-    </style>
-</head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="SQOh55Ri1bMC2hsTB05o2ZZs-T_CW_oiyBDRId16aKg" />
+    <title>Job Opportunities | Trinity Technology Solutions</title>
+    <link rel="stylesheet" href="trinity-styles.css">
+    <link rel="stylesheet" href="mobile-complete-fix.css">
+    <link rel="stylesheet" href="consistent-header-spacing.css">
+    <link rel="stylesheet" href="../curvy-wave.css" />
+  </head>
 <body>
     <header class="new-responsive-header">
         <div class="new-header-container">
@@ -118,10 +20,11 @@
             </div>
             <nav class="new-nav" id="nav-menu">
                 <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
                 <a href="about-us.html">About</a>
+                <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
                 <a href="career.html">Career</a>
+                <a href="jobs.html" class="active">Jobs</a>
                 <a href="contact.html" class="new-get-started">Get Started</a>
             </nav>
             <div class="new-hamburger" id="hamburger">
@@ -132,195 +35,64 @@
         </div>
     </header>
 
-    <div style="background: white; padding: 2rem 0; text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; color: #4f46e5;">Apply for Suitable Job Profile</h1>
-            <div style="width: 100px; height: 3px; background: #4f46e5; margin: 1rem auto 2rem;"></div>
-        </div>
-    </div>
-
-
-
-    <!-- CEIPAL Job Portal Iframe -->
-    <div style="max-width: 1400px; margin: 0 auto; padding: 1rem; background: white;">
-        <iframe 
-            src="https://jobsapi.ceipal.com/APISource/v3/index.html?api_key=YjRoeE5zeXJuNUV2eHRLdUVTY1JUdz09&cp_id=Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09" 
-            width="100%" 
-            height="800" 
-            frameborder="0" 
-            scrolling="yes"
-            style="border: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
-            title="Trinity Technology Solutions Job Portal">
-        </iframe>
-    </div>
-
-    <script>
-        let allJobs = [];
-        let filteredJobs = [];
-        let currentPage = 1;
-        const jobsPerPage = 6;
-
-        // Mobile menu toggle
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-
-        // Fetch jobs from backend
-        async function fetchJobs() {
-            try {
-                console.log('Attempting to fetch jobs from backend...');
-                // Remove backend call - use iframe only
-                throw new Error('Using iframe only');
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                console.log('Backend response:', data);
-                
-                allJobs = data.jobs || [];
-                filteredJobs = [...allJobs];
-                
-                console.log(`Loaded ${allJobs.length} jobs`);
-                displayJobs();
-                updateJobsCount();
-            } catch (error) {
-                console.error('Error fetching jobs:', error);
-                document.getElementById('jobsContainer').innerHTML = 
-                    `<div style="text-align: center; padding: 3rem; color: #dc2626;">
-                        <h3>Connection Error</h3>
-                        <p>Cannot connect to job server. Please ensure:</p>
-                        <ul style="text-align: left; display: inline-block;">
-                            <li>Backend server is running on port 5000</li>
-                            <li>CEIPAL credentials are configured</li>
-                            <li>Check browser console for details</li>
-                        </ul>
-                        <button onclick="fetchJobs()" style="background: #3b82f6; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; margin-top: 1rem;">Retry</button>
-                    </div>`;
-            }
-        }
-
-        // Display jobs with pagination
-        function displayJobs() {
-            const container = document.getElementById('jobsContainer');
-            
-            if (filteredJobs.length === 0) {
-                container.innerHTML = '<div class="loading">No jobs found matching your criteria.</div>';
-                document.getElementById('pagination').style.display = 'none';
-                return;
-            }
-
-            const startIndex = (currentPage - 1) * jobsPerPage;
-            const endIndex = startIndex + jobsPerPage;
-            const jobsToShow = filteredJobs.slice(startIndex, endIndex);
-
-            container.innerHTML = jobsToShow.map(job => `
-                <div style="padding: 1.5rem; border-bottom: 1px solid #e2e8f0; transition: background 0.3s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
-                        <h3 style="color: #3b82f6; font-size: 1.25rem; font-weight: 600; margin: 0; cursor: pointer;" onclick="viewJobDetails('${job.id}')">${job.title}</h3>
-                        <span style="font-size: 0.8rem; color: #64748b; display: flex; align-items: center; gap: 0.25rem;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                            ${job.postedDate ? new Date(job.postedDate).toLocaleDateString() : 'Yesterday'}
-                        </span>
-                    </div>
-                    <div style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        ${job.location}
-                    </div>
-                    <p style="color: #475569; line-height: 1.6; margin-bottom: 0; font-size: 0.95rem;">
-                        ${job.description ? job.description.slice(0, 300) + '...' : 'No description available.'}
+    <main style="padding-top: 80px;">
+        <section class="section-with-curve" style="background: white; padding: 60px 0;">
+            <div class="container-large" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h1 style="font-size: 2.5rem; color: #22396b; margin-bottom: 1rem;">Current Job Openings</h1>
+                    <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                        Explore exciting career opportunities with Trinity Technology Solutions and join our team of innovative professionals.
                     </p>
                 </div>
-            `).join('');
+                
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden;">
+                    <iframe 
+                        src="https://jobsapi.ceipal.com/APISource/v3/index.html?api_key=YjRoeE5zeXJuNUV2eHRLdUVTY1JUdz09&cp_id=Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09"
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        scrolling="auto"
+                        allowtransparency="true"
+                        style="border: 0; width: 100%; height: 800px;"
+                        title="Trinity Jobs">
+                    </iframe>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #22396b; margin-bottom: 1rem;">Don't see the right position?</h3>
+                    <p style="color: #666; margin-bottom: 1.5rem;">
+                        We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
+                    </p>
+                    <a href="contact.html" style="background: #22396b; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block;">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            // Update pagination
-            updatePagination();
-        }
-
-        // Update pagination
-        function updatePagination() {
-            const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
-            const paginationContainer = document.getElementById('pagination');
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            const hamburger = document.getElementById('hamburger');
             
-            if (totalPages <= 1) {
-                paginationContainer.style.display = 'none';
-                return;
-            }
-
-            paginationContainer.style.display = 'flex';
-            paginationContainer.innerHTML = Array.from({ length: totalPages }, (_, i) => `
-                <button class="page-btn ${currentPage === i + 1 ? 'active' : ''}" onclick="goToPage(${i + 1})">
-                    ${i + 1}
-                </button>
-            `).join('');
-        }
-
-        // Go to specific page
-        function goToPage(page) {
-            currentPage = page;
-            displayJobs();
-        }
-
-        // Search jobs
-        function searchJobs() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
             
-            if (!searchTerm) {
-                filteredJobs = [...allJobs];
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
             } else {
-                filteredJobs = allJobs.filter(job => 
-                    job.title.toLowerCase().includes(searchTerm) ||
-                    job.location.toLowerCase().includes(searchTerm) ||
-                    (job.description && job.description.toLowerCase().includes(searchTerm))
-                );
-            }
-            
-            currentPage = 1;
-            displayJobs();
-            updateJobsCount();
-        }
-
-        // Update jobs count
-        function updateJobsCount() {
-            document.getElementById('totalJobs').textContent = filteredJobs.length;
-        }
-
-        // Apply to job
-        function applyToJob(url) {
-            if (url && url !== '#') {
-                window.open(url, '_blank');
-            } else {
-                alert('Application link not available. Please contact us directly.');
-            }
-        }
-
-        // View job details
-        function viewJobDetails(jobId) {
-            const job = allJobs.find(j => j.id === jobId);
-            if (job) {
-                alert(`Job Details:\n\nTitle: ${job.title}\nLocation: ${job.location}\nType: ${job.type || 'Full-Time'}\n\nDescription: ${job.description || 'No description available.'}`);
-            }
-        }
-
-        // Search on Enter key
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchJobs();
+                document.body.style.overflow = 'auto';
             }
         });
-
-        // Hide job container, use iframe only
-        document.getElementById('jobsContainer').style.display = 'none';
-        document.getElementById('pagination').style.display = 'none';
+        
+        document.querySelectorAll('.new-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-menu').classList.remove('active');
+                document.getElementById('hamburger').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
     </script>
 </body>
 </html>

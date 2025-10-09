@@ -41,6 +41,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="google-site-verification" content="SQOh55Ri1bMC2hsTB05o2ZZs-T_CW_oiyBDRId16aKg" />
 
     <link
       href="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/css/trinity-website-875b5b.webflow.shared.b21e2f13f.css"
@@ -122,10 +123,74 @@
       }
     </style>
     <style>
-      body, html { overflow-x: hidden !important; max-width: 100vw !important; }
-      * { box-sizing: border-box; }
-      .container-large, .container-medium, .container-small { max-width: 100% !important; overflow-x: hidden; }
-      @media (max-width: 768px) { [data-aos] { transform: none !important; } }
+      body, html { 
+        overflow-x: hidden !important; 
+        max-width: 100vw !important;
+      }
+      * { 
+        box-sizing: border-box;
+      }
+      .container-large, .container-medium, .container-small { 
+        max-width: 100% !important; 
+        overflow-x: hidden;
+      }
+      
+      /* Hide horizontal scrollbar */
+      body::-webkit-scrollbar-track:horizontal {
+        display: none;
+      }
+      
+      body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      
+      body::-webkit-scrollbar:horizontal {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      
+      @media (max-width: 768px) { 
+        [data-aos] { transform: none !important; }
+      }
+      
+      /* Hero section animations */
+      .section-with-curve {
+        background-attachment: scroll !important;
+      }
+      
+      /* Ensure smooth animations without overlapping */
+      [data-aos="fade-down"] {
+        opacity: 0;
+        transform: translateY(-30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      
+      [data-aos="fade-up"] {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      
+      [data-aos].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      @media (max-width: 768px) {
+        .section-with-curve {
+          background-attachment: scroll !important;
+        }
+        
+        /* Disable transform animations on mobile, keep opacity */
+        [data-aos] {
+          transform: none !important;
+        }
+        
+        [data-aos].aos-animate {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
       
       /* Mobile Navigation Fixes */
       @media (max-width: 768px) {
@@ -142,6 +207,7 @@
           gap: 2rem !important;
           transition: left 0.3s ease !important;
           z-index: 9999 !important;
+          overflow-x: hidden !important;
         }
         
         .new-nav.active {
@@ -187,6 +253,7 @@
           justify-content: space-between !important;
           align-items: center !important;
           width: 100% !important;
+          overflow-x: hidden !important;
         }
         
         .new-hamburger span {
@@ -210,6 +277,7 @@
         }
       }
     </style>
+      <link rel="stylesheet" href="curvy-wave.css" />
   </head>
   <body>
     <header class="new-responsive-header">
@@ -221,8 +289,8 @@
         </div>
         <nav class="new-nav" id="nav-menu">
           <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
           <a href="about-us.html">About</a>
+          <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
           <a href="career.html">Career</a>
           <a href="contact.html" class="new-get-started">Get Started</a>
@@ -339,20 +407,33 @@
 
         
         <!-- Hero Section -->
-        <section style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2084&q=80') center/cover; padding: 120px 0; color: white;" data-aos="fade-up">
-          <div class="padding-global">
+        <section class="section-with-curve" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2084&q=80') center/cover; background-attachment: scroll; min-height: 80vh; display: flex; align-items: center; justify-content: center; color: white; position: relative;">
+          <div class="padding-global" style="width: 100%; position: relative; z-index: 2;">
             <div class="container-large">
               <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; color: white;" data-aos="fade-up">Join Our Team</h1>
-                <p style="font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9;">Shape the future of technology with Trinity Technology Solutions. We're looking for passionate innovators to join our mission of digital transformation.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                  <a href="jobs-simple.html" style="background: #1a237e; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">View Open Positions</a>
-                  <a href="mailto:careers@trinitetech.com?subject=Job Inquiry" style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; border: 2px solid white;">General Inquiry</a>
+                <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; color: white;" data-aos="fade-down" data-aos-duration="800" data-aos-once="true">Join Our Team</h1>
+                <p style="font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9;" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-once="true">Shape the future of technology with Trinity Technology Solutions. We're looking for passionate innovators to join our mission of digital transformation.</p>
+
+                
+                <!-- Ceipal Job Integration -->
+                <div id="jobPortal" style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; margin-top: 2rem; display: none;" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" data-aos-once="true">
+                    <iframe 
+                        src="https://jobsapi.ceipal.com/APISource/v3/index.html?api_key=YjRoeE5zeXJuNUV2eHRLdUVTY1JUdz09&cp_id=Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09"
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        scrolling="auto"
+                        allowtransparency="true"
+                        style="border: 0; width: 100%; height: 800px;"
+                        title="Trinity Jobs">
+                    </iframe>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+
 
         <!-- Why Work With Us -->
         <section style="padding: 80px 0; background: linear-gradient(rgba(248,249,250,0.9), rgba(248,249,250,0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover;" data-aos="fade-up">
@@ -438,11 +519,29 @@
               <div style="text-align: center; max-width: 600px; margin: 0 auto;">
                 <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;" data-aos="fade-up">Don't See Your Role?</h2>
                 <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">We're always looking for talented individuals. Send us your resume and let us know how you'd like to contribute to our mission.</p>
-                <a href="mailto:careers@trinitetech.com?subject=General Application" style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; border: 2px solid white;">Send Your Resume</a>
+
               </div>
             </div>
           </div>
         </section>
+
+
+
+        <!-- General Inquiry Modal -->
+        <div id="generalInquiryModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeGeneralInquiryModal()">&times;</span>
+            <h2>General Inquiry</h2>
+            <form id="generalInquiryForm" onsubmit="submitGeneralInquiry(event)">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Email Address" required>
+              <input type="tel" name="phone" placeholder="Phone Number">
+              <input type="text" name="subject" placeholder="Subject" required>
+              <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
 
         <footer id="footer" style="background: #1a1a1a; color: #ffffff; padding: 6rem 0 4rem; position: relative; overflow: hidden; min-height: 400px;">
           <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 12rem; font-weight: 900; color: rgba(255,255,255,0.05); white-space: nowrap; z-index: 1; pointer-events: none;">Trinity Technology</div>
@@ -559,6 +658,82 @@
                 grid-template-columns: 1fr !important;
               }
             }
+            
+            /* Modal Styles */
+            .modal {
+              display: none;
+              position: fixed;
+              z-index: 10000;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0,0,0,0.5);
+            }
+            .modal-content {
+              background-color: white;
+              margin: 5% auto;
+              padding: 2rem;
+              border-radius: 12px;
+              width: 90%;
+              max-width: 500px;
+              position: relative;
+              box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+              max-height: 80vh;
+              overflow-y: auto;
+            }
+            .close-btn {
+              position: absolute;
+              right: 1rem;
+              top: 1rem;
+              font-size: 2rem;
+              cursor: pointer;
+              color: #666;
+            }
+            .close-btn:hover {
+              color: #000;
+            }
+            .modal-content h2 {
+              margin: 0 0 1.5rem 0;
+              color: #22396b;
+            }
+            .modal-content input,
+            .modal-content textarea,
+            .modal-content select {
+              width: 100%;
+              padding: 0.75rem;
+              margin-bottom: 1rem;
+              border: 1px solid #ddd;
+              border-radius: 6px;
+              font-size: 1rem;
+              box-sizing: border-box;
+            }
+            .modal-content input:focus,
+            .modal-content textarea:focus,
+            .modal-content select:focus {
+              outline: none;
+              border-color: #22396b;
+            }
+            .submit-btn {
+              background: #22396b;
+              color: white;
+              padding: 0.75rem 2rem;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+              font-size: 1rem;
+              width: 100%;
+            }
+            .submit-btn:hover {
+              background: #1a2d5a;
+            }
+            @media (max-width: 768px) {
+              .modal-content {
+                margin: 10% auto;
+                padding: 1.5rem;
+                width: 95%;
+              }
+            }
           </style>
         </footer>
       </main>
@@ -569,14 +744,187 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration: 800,
-        easing: "ease-out",
-        once: true,
-        offset: 50
-      });
+      // Initialize EmailJS
+      emailjs.init("pqGNmyI4nmJpnTacM");
+      
+      // Enhanced AOS initialization with error handling and mobile optimization
+      function initializeAOS() {
+        try {
+          // Check if mobile device
+          const isMobile = window.innerWidth < 768;
+          
+          if (isMobile) {
+            // Disable AOS on mobile for better performance
+            console.log('AOS disabled on mobile for better performance');
+            return;
+          }
+          
+          // Initialize AOS with perfect settings
+          AOS.init({
+            duration: 1000,
+            easing: 'ease-out-quart',
+            once: true,
+            offset: 120,
+            delay: 0,
+            disable: function() {
+              return window.innerWidth < 768;
+            },
+            startEvent: 'DOMContentLoaded',
+            initClassName: 'aos-init',
+            animatedClassName: 'aos-animate',
+            useClassNames: false,
+            disableMutationObserver: false,
+            debounceDelay: 50,
+            throttleDelay: 99
+          });
+          
+          console.log('AOS initialized successfully');
+        } catch (error) {
+          console.warn('AOS initialization failed:', error);
+          // Fallback: Remove all AOS attributes to prevent layout issues
+          document.querySelectorAll('[data-aos]').forEach(el => {
+            el.removeAttribute('data-aos');
+            el.removeAttribute('data-aos-delay');
+            el.removeAttribute('data-aos-duration');
+          });
+        }
+      }
+      
+      // Mobile-specific CSS overrides
+      if (window.innerWidth < 768) {
+        const mobileStyle = document.createElement('style');
+        mobileStyle.textContent = `
+          [data-aos] {
+            transform: none !important;
+            opacity: 1 !important;
+            transition: none !important;
+          }
+        `;
+        document.head.appendChild(mobileStyle);
+      }
+      
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeAOS);
+      } else {
+        initializeAOS();
+      }
+      
+      // Intersection Observer fallback for better performance
+      if ('IntersectionObserver' in window) {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, observerOptions);
+        
+        // Observe elements with AOS attributes as fallback
+        document.querySelectorAll('[data-aos]').forEach(el => {
+          observer.observe(el);
+        });
+      }
+      
+
+      
+      function openGeneralInquiryModal() {
+        document.getElementById('generalInquiryModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeGeneralInquiryModal() {
+        document.getElementById('generalInquiryModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      
+
+      
+      // General Inquiry Form Submission
+      function submitGeneralInquiry(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        
+        // Show loading state
+        const submitBtn = event.target.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Prepare email parameters
+        const emailParams = {
+          from_name: formData.get('name'),
+          from_email: formData.get('email'),
+          phone: formData.get('phone') || 'Not provided',
+          message: formData.get('message'),
+          title: formData.get('subject')
+        };
+        
+        // Send email
+        emailjs.send(
+          "service_m8it7mm",
+          "template_i2yx6lo",
+          emailParams,
+          "pqGNmyI4nmJpnTacM"
+        ).then(() => {
+          // Send auto-reply
+          const autoReplyParams = {
+            'Client Name': formData.get('name'),
+            to_email: formData.get('email')
+          };
+          
+          return emailjs.send(
+            "service_m8it7mm",
+            "template_5hus2xw",
+            autoReplyParams,
+            "pqGNmyI4nmJpnTacM"
+          );
+        }).then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            alert('Thank you for your message! We will get back to you soon.');
+            closeGeneralInquiryModal();
+            document.getElementById('generalInquiryForm').reset();
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            alert('Thank you for your message! We will get back to you soon.');
+            closeGeneralInquiryModal();
+            document.getElementById('generalInquiryForm').reset();
+          }
+        ).finally(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+      }
+      
+      // Toggle Job Portal
+      function toggleJobPortal() {
+        const portal = document.getElementById('jobPortal');
+        if (portal.style.display === 'none') {
+          portal.style.display = 'block';
+          portal.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          portal.style.display = 'none';
+        }
+      }
+      
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const inquiryModal = document.getElementById('generalInquiryModal');
+        if (event.target === inquiryModal) {
+          closeGeneralInquiryModal();
+        }
+      }
     </script>
   </body>
 </html>

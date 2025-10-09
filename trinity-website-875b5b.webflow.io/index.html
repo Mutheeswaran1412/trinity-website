@@ -45,6 +45,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="google-site-verification" content="SQOh55Ri1bMC2hsTB05o2ZZs-T_CW_oiyBDRId16aKg" />
 
     <link
       href="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/css/trinity-website-875b5b.webflow.shared.b21e2f13f.css"
@@ -80,6 +81,8 @@
     <link rel="stylesheet" href="consistent-header-spacing.css" />
     <link rel="stylesheet" href="cross-platform-flags.css" />
     <link rel="stylesheet" href="mobile-responsive-fix.css" />
+    <link rel="stylesheet" href="curvy-wave.css" />
+    <link rel="stylesheet" href="mobile-button-fix.css" />
 
   </head>
   <body>
@@ -92,12 +95,11 @@
         </div>
         <nav class="new-nav" id="nav-menu">
           <a href="index.html">Home</a>
-
           <a href="about-us.html">About</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
           <a href="career.html">Career</a>
-          <a href="contact.html" class="new-get-started">Get Started</a>
+          <a href="contact.html" class="new-get-started">Book Intro Call</a>
         </nav>
         <div class="new-hamburger" id="hamburger">
           <span></span>
@@ -465,15 +467,15 @@ a,
           .service-card-new {
             background: white;
             border-radius: 12px;
-            padding: 1rem 0.75rem;
+            padding: 1.5rem 1rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             border: 1px solid #f1f5f9;
             text-decoration: none;
-            height: 60px;
+            height: 80px;
           }
           
           .service-card-new:hover,
@@ -595,7 +597,8 @@ a,
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid #e5e7eb;
-            margin: 0 10px;
+            margin: 0 auto;
+            max-width: 100%;
           }
           
           .world-map {
@@ -655,9 +658,10 @@ a,
           
           .location-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
             margin-top: 2rem;
+            padding: 0 1rem;
           }
           
           .location-card {
@@ -881,6 +885,17 @@ a,
             color: #1f2937;
           }
           
+          /* Tech Card Hover Effects */
+          .tech-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+          }
+          
+          .tech-card:hover div:first-child {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+          }
+          
           .tech-icons-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -996,6 +1011,16 @@ a,
             scroll-behavior: smooth;
           }
           
+          /* Hide scrollbars */
+          ::-webkit-scrollbar {
+            display: none;
+          }
+          
+          html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+          
           html {
             overflow-x: hidden !important;
             max-width: 100vw !important;
@@ -1041,10 +1066,13 @@ a,
             }
           }
           
-          .services,
           .sectors,
           .faq-section {
             background: white !important;
+          }
+          
+          .services {
+            background: #0f0f0f !important;
           }
           
           /* Businesses Section Styles - Dark Theme */
@@ -1311,8 +1339,244 @@ a,
           @media (max-width: 768px) {
             /* Hero section mobile optimization */
             .section_hero {
+              height: 70vh !important;
+              padding: 0 !important;
+              margin: 0 !important;
+              overflow: hidden !important;
+              position: relative !important;
+            }
+            
+            /* Video mobile fix */
+            #hero-video {
+              width: 100% !important;
+              height: 100% !important;
+              object-fit: cover !important;
+              object-position: center !important;
+              position: absolute !important;
+              top: 0 !important;
+              left: 0 !important;
+              z-index: -2 !important;
+            }
+            
+            /* Gradient overlay mobile */
+            .section_hero > div:nth-child(2) {
+              width: 100% !important;
+              height: 100% !important;
+              position: absolute !important;
+              top: 0 !important;
+              left: 0 !important;
+              z-index: -1 !important;
+            }
+            
+            /* Hero content mobile responsive */
+            .hero_content {
+              text-align: center !important;
+              max-width: 100% !important;
+              padding: 1rem !important;
+              position: relative !important;
+              z-index: 2 !important;
+              margin-top: 20vh !important;
+            }
+            
+            /* Hero grid mobile */
+            .hero_grid {
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
               min-height: 70vh !important;
-              padding-top: 60px !important;
+            }
+            
+            .hero_content h1 {
+              font-size: 1.8rem !important;
+              line-height: 1.3 !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            .hero_content p {
+              font-size: 1rem !important;
+              line-height: 1.5 !important;
+            }
+            
+            /* Button mobile responsive */
+            .hero_content .button {
+              font-size: 1rem !important;
+              padding: 0.75rem 1.5rem !important;
+              margin-top: 1rem !important;
+              display: block !important;
+              text-align: center !important;
+              width: fit-content !important;
+              margin-left: auto !important;
+              margin-right: auto !important;
+            }
+            
+            .hero_content > div:last-child {
+              text-align: center !important;
+            }
+            
+            /* Partner pill mobile */
+            .partner-pill {
+              font-size: 12px !important;
+              padding: 6px 12px !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            /* Container mobile */
+            .section_hero .container-large {
+              padding: 0 1rem !important;
+              height: 70vh !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+            }
+            
+            /* Mobile Navigation */
+            .new-responsive-header {
+              padding: 0.5rem 0 !important;
+            }
+            
+            .new-header-container {
+              padding: 0 1rem !important;
+              display: flex !important;
+              justify-content: space-between !important;
+              align-items: center !important;
+            }
+            
+            .new-logo img {
+              height: 40px !important;
+            }
+            
+            .new-hamburger {
+              display: flex !important;
+            }
+            
+            .new-nav {
+              display: none !important;
+            }
+            
+            .new-nav.active {
+              display: flex !important;
+              position: fixed !important;
+              top: 0 !important;
+              left: 0 !important;
+              width: 100% !important;
+              height: 100vh !important;
+              background: white !important;
+              flex-direction: column !important;
+              justify-content: center !important;
+              align-items: center !important;
+              z-index: 9999 !important;
+            }
+            
+            /* Hero button mobile spacing */
+            #w-node-c869799b-6932-d519-9c89-71bb5ca20435-5ca20426 {
+              margin-bottom: 20px !important;
+              position: relative !important;
+              top: -30px !important;
+            }
+            
+            /* Mobile Content Adjustments */
+            .container-large,
+            .container-medium,
+            .container-small {
+              max-width: 95% !important;
+              padding: 0 1rem !important;
+            }
+            
+            /* Services Grid Mobile */
+            .services-grid-new {
+              grid-template-columns: 1fr !important;
+              gap: 1rem !important;
+            }
+            
+            /* Four Column Grid Mobile */
+            .four_column_grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 1rem !important;
+            }
+            
+            /* Counter Grid Mobile */
+            .counter-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 1.5rem !important;
+            }
+            
+            /* Business Grid Mobile */
+            .businesses-grid-new {
+              grid-template-columns: 1fr !important;
+              gap: 1.5rem !important;
+            }
+            
+            /* Location Cards Mobile */
+            .location-cards {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 0.75rem !important;
+            }
+            
+            /* Tech Stack Mobile */
+            .tech-icons-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 1rem !important;
+            }
+            
+            .tech-icon {
+              width: 60px !important;
+              height: 60px !important;
+            }
+            
+            .tech-icon img {
+              width: 30px !important;
+              height: 30px !important;
+            }
+            
+            /* Industry Partners Mobile Fix */
+            .partners_comp {
+              padding: 1rem 0 !important;
+              overflow-x: hidden !important;
+              margin-top: -60px !important;
+            }
+            
+            .partners_comp .container-large {
+              max-width: 100% !important;
+              padding: 0 1rem !important;
+            }
+            
+            .partners_comp h2 {
+              font-size: 0.9rem !important;
+              margin-bottom: 1rem !important;
+              text-align: center !important;
+              padding: 0 1rem !important;
+              line-height: 1.3 !important;
+            }
+            
+            .partners_comp > div {
+              width: 100% !important;
+              max-width: 100vw !important;
+              overflow-x: hidden !important;
+            }
+            
+            .logos-scroll-container {
+              width: 100% !important;
+              overflow-x: hidden !important;
+              margin: 0 !important;
+            }
+            
+            .logos-scroll {
+              display: flex !important;
+              align-items: center !important;
+              gap: 1rem !important;
+              animation: scrollRight 25s linear infinite !important;
+              width: calc(200% + 2rem) !important;
+            }
+            
+            .partner-logo {
+              height: 20px !important;
+              max-width: 40px !important;
+            }
+            
+            .partner-logo {
+              height: 20px !important;
+              max-width: 40px !important;
+              flex-shrink: 0 !important;
             }
             
             #hero-video {
@@ -1352,18 +1616,14 @@ a,
             
             .who-we-are-section .container-large {
               padding: 0 1rem !important;
+              margin-left: 0 !important;
             }
             
             .who-we-are-section .container-large > div {
               grid-template-columns: 1fr !important;
               gap: 2rem !important;
               text-align: center !important;
-            }
-            
-            .who-we-are-section h2 {
-              font-size: 1.4rem !important;
-              line-height: 1.5 !important;
-              padding: 0 1rem !important;
+              margin-left: 0 !important;
             }
             
             .who-we-are-section .container-large img {
@@ -1373,13 +1633,23 @@ a,
             }
             
             .who-we-are-section .container-large > div > div:last-child {
-              padding: 1rem 0 !important;
+              padding: 1rem !important;
+              text-align: center !important;
             }
             
-            .who-we-are-section h2 {
-              font-size: 1.5rem !important;
+            .who-we-are-section .container-large > div > div:last-child h2 {
+              font-size: 1rem !important;
               line-height: 1.4 !important;
+              margin-bottom: 1rem !important;
+              text-align: center !important;
+            }
+            
+            .who-we-are-section .container-large > div > div:last-child p {
+              font-size: 1rem !important;
+              line-height: 1.5 !important;
               margin-bottom: 1.5rem !important;
+              text-align: center !important;
+              font-weight: 400 !important;
             }
             
             /* Databricks section mobile fixes */
@@ -1443,24 +1713,31 @@ a,
               font-size: 1rem !important;
             }
             
-            .tech-stack-section > div > div > div:nth-child(3),
-            .tech-stack-section > div > div > div:nth-child(4) {
+            .tech-cards-grid {
               grid-template-columns: repeat(2, 1fr) !important;
-              gap: 1rem !important;
+              gap: 1.5rem !important;
             }
             
-            .tech-stack-section > div > div > div:nth-child(3) > div,
-            .tech-stack-section > div > div > div:nth-child(4) > div {
-              padding: 1.5rem 0.5rem !important;
+            .tech-card {
+              padding: 1.5rem 1rem !important;
             }
             
-            .tech-stack-section img {
-              width: 30px !important;
-              height: 30px !important;
+            .tech-card div:first-child {
+              width: 50px !important;
+              height: 50px !important;
             }
             
-            .tech-stack-section h3 {
-              font-size: 0.8rem !important;
+            .tech-card img {
+              width: 24px !important;
+              height: 24px !important;
+            }
+            
+            .tech-card h3 {
+              font-size: 0.9rem !important;
+            }
+            
+            .tech-card p {
+              font-size: 0.75rem !important;
             }
             
             /* Services section mobile fixes */
@@ -1604,9 +1881,74 @@ a,
               grid-template-columns: 1fr !important;
             }
             
-            .tech-stack-section > div > div > div:nth-child(3),
-            .tech-stack-section > div > div > div:nth-child(4) {
-              grid-template-columns: 1fr !important;
+            .tech-icons-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            /* Industry Partners Small Mobile */
+            .partners_comp h2 {
+              font-size: 0.8rem !important;
+              padding: 0 0.5rem !important;
+              line-height: 1.2 !important;
+            }
+            
+            .partner-logo {
+              height: 18px !important;
+              max-width: 35px !important;
+            }
+            
+            .logos-scroll {
+              gap: 0.8rem !important;
+            }
+            
+            /* About section small mobile fixes */
+            .who-we-are-section .container-large > div > div:last-child h2 {
+              font-size: 0.9rem !important;
+            }
+            
+            .who-we-are-section .container-large > div > div:last-child p {
+              font-size: 0.9rem !important;
+            }
+            
+            /* Button adjustment for small screens */
+            #w-node-c869799b-6932-d519-9c89-71bb5ca20435-5ca20426 {
+              top: -40px !important;
+            }
+            
+            /* Container padding for small screens */
+            .container-large,
+            .container-medium,
+            .container-small {
+              padding: 0 0.75rem !important;
+            }
+            
+            /* Hero content small mobile */
+            .hero_content {
+              padding: 0.75rem !important;
+              margin-top: 15vh !important;
+            }
+            
+            .hero_content h1 {
+              font-size: 1.5rem !important;
+            }
+            
+            .hero_content p {
+              font-size: 0.9rem !important;
+            }
+            
+            /* Button small mobile */
+            .hero_content .button {
+              font-size: 0.9rem !important;
+              padding: 0.625rem 1.25rem !important;
+            }
+            
+            .partner-pill {
+              font-size: 11px !important;
+              padding: 5px 10px !important;
+            }
+            
+            .section_hero .container-large {
+              padding: 1.5rem 0.75rem !important;
             }
           }
           
@@ -1708,20 +2050,22 @@ a,
         </style>
       </div>
       <main class="main-wrapper">
-        <section class="section_hero">
-          <video autoplay muted loop id="hero-video" playsinline preload="auto">
+        <section class="section_hero" style="position: relative;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)); z-index: -1; pointer-events: none;"></div>
+          <video autoplay muted loop id="hero-video" playsinline preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
             <source src="../cdn.prod.website-files.com/68c8ed023c167a28e6d843cb/1106562_1080p_4k_1920x1080%20(1)%20(1).mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+
           <div class="u-nav-spacer"></div>
           <div class="padding-global padding-horizontal-m-0">
-            <div class="container-large" style="max-width: 2000px; margin: 0 auto; padding: 0 2rem;">
+            <div class="container-large" style="max-width: 2000px; margin: 0 auto; padding: 4rem 2rem;">
               <div class="hero_grid">
                 <div
                   id="w-node-c869799b-6932-d519-9c89-71bb5ca2042b-5ca20426"
                   data-w-id="c869799b-6932-d519-9c89-71bb5ca2042b"
                   class="hero_content hero-fade-in"
-                  style="text-align: left; max-width: 1000px;"
+                  style="text-align: left; max-width: 1000px; transform: translateY(-60px); position: relative; z-index: 2;"
                 >
                   <div>
                     <a href="https://www.databricks.com/company/partners" target="_blank" class="partner-pill">
@@ -1740,31 +2084,23 @@ a,
                       </div>
                     </a>
                     <div class="padding-bottom padding-xsmall"></div>
-                    <h1 class="text-color-white heading-style-h2" style="font-size: 3.5rem; line-height: 1.2; text-align: left; max-width: 900px; margin: 0 0 2rem 0;" data-aos="fade-up">
+                    <h1 class="text-color-white heading-style-h2" style="font-size: 2.8rem; line-height: 1.2; text-align: left; max-width: 900px; margin: 0 0 2rem 0;" data-aos="fade-up">
                       <strong>Empowering Businesses with Data Analytics and AI Across the Globe</strong>
                     </h1>
-                    <div class="padding-bottom padding-xsmall"></div>
-                    <p class="body_one" style="font-size: 1.2rem; line-height: 1.6; text-align: left; max-width: 700px; margin: 0;">
+                    <p class="body_one" style="font-size: 1.1rem; line-height: 1.6; text-align: left; max-width: 700px; margin: 0 0 2rem 0;">
                       Harnessing the power of data analytics to transform businesses in USA, India, Oman, and Netherlands.
                     </p>
+                    <div style="text-align: left; margin-top: 1.5rem;">
+                      <a href="contact.html" class="button is-medium w-button" style="font-size: 1.1rem; padding: 0.875rem 2rem; background: #4d65ff; border-radius: 8px; color: white; text-decoration: none; display: inline-block;">Connect with Us</a>
+                    </div>
                   </div>
-                  <div
-                    id="w-node-c869799b-6932-d519-9c89-71bb5ca20435-5ca20426"
-                    style="text-align: center; margin-top: 2rem;"
-                  >
-                    <a
-                      href="contact.html"
-                      class="button is-medium w-button"
-                      style="font-size: 1.2rem; padding: 1rem 2rem; background: #4d65ff; border-radius: 8px;"
-                      >Connect with Us</a
-                    >
-                  </div>
+
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="partners_comp" style="padding: 1rem 0; overflow-x: hidden;">
+        <section class="partners_comp" style="padding: 0.5rem 0; overflow-x: hidden; margin-top: -60px;">
           <div style="padding-top: 0.5rem; padding-bottom: 0.5rem; width: 100%; max-width: 100vw; overflow-x: hidden;">
             <h2 class="heading" style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: center;">
               <strong class="bold-text"
@@ -1774,7 +2110,7 @@ a,
             <div class="container-large" style="max-width: 100%; overflow-x: hidden;">
               <div class="logos-scroll-container">
                 <div class="logos-scroll">
-                  <img src="../cdn.prod.website-files.com/images/dbt-icon-2yxlz1fvy25mvn5scgnlw.webp" alt="DBT" class="partner-logo">
+                  <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/java-coffee-cup-logo.png" alt="Java" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/Microsoft-Azure-Emblem.png" alt="Microsoft Azure" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/Odoo_logo_rgb.svg.png" alt="Odoo" class="partner-logo">
@@ -1783,7 +2119,7 @@ a,
                   <img src="../cdn.prod.website-files.com/images/images.png" alt="Fivetran" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/images (1).png" alt="Partner" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/images (2).png" alt="Partner" class="partner-logo">
-                  <img src="../cdn.prod.website-files.com/images/dbt-icon-2yxlz1fvy25mvn5scgnlw.webp" alt="DBT" class="partner-logo">
+                  <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/java-coffee-cup-logo.png" alt="Java" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/Microsoft-Azure-Emblem.png" alt="Microsoft Azure" class="partner-logo">
                   <img src="../cdn.prod.website-files.com/images/Odoo_logo_rgb.svg.png" alt="Odoo" class="partner-logo">
@@ -1797,44 +2133,43 @@ a,
             </div>
           </div>
         </section>
-        <section class="who-we-are-section" style="background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&h=1080&fit=crop') center/cover; padding: 80px 0;" data-aos="fade-up">
+        <section class="who-we-are-section" style="background: #0f0f0f; padding: 80px 0; margin-top: -20px; overflow-x: hidden;" data-aos="fade-up" data-aos-duration="1000">
           <div class="padding-global">
-            <div class="container-large" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-              <div style="display: grid; grid-template-columns: 45% 55%; gap: 3rem; align-items: center;">
-                <!-- Left Side - Image -->
-                <div style="display: flex; justify-content: flex-start; align-items: center;">
-                  <img
-                    src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8443e_66dec62704d296fdf1be0088_team_discussion.avif"
-                    alt="Team Discussion"
-                    style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;"
-                    data-aos="slide-right"
-                  />
+            <div class="container-large" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+
+              
+              <!-- Content Grid -->
+              <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; margin-bottom: 4rem;">
+                <!-- Left Navigation -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;" data-aos="fade-right" data-aos-duration="1000">
+                  <div style="color: white; font-size: 5rem; font-weight: 700; padding: 0.5rem 0; line-height: 1.1;">About<br>us</div>
                 </div>
                 
-                <!-- Right Side - Content -->
-                <div style="display: flex; flex-direction: column; justify-content: center; padding-right: 2rem;">
-                  <h2 style="color: #bdc3c7; font-size: 0.9rem; font-weight: normal; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">About</h2>
-                  <p style="color: white; font-size: 1.8rem; line-height: 1.5; font-weight: 700; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="200">
-                  With over 100 years of combined leadership, we are your trusted partner in analyzing, automating, and simplifying your data journey, delivering real-time insights, seamless workflows, and measurable growth.
-
-
+                <!-- Right Content -->
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                  <p style="color: white; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; font-family: 'Montserrat', sans-serif; font-weight: 400;">
+                 With over 100 years of combined leadership, our team is passionate about simplifying your data journey. We deliver real-time insights, seamless workflows, and measurable business impact, while leveraging innovative solutions and cutting-edge technologies to help organizations make smarter decisions, optimize operations, and achieve sustainable growth.
                   </p>
-                  <div style="text-align: center;">
-                    <a href="about-us.html" class="button is-medium w-button" style="background: #4d65ff; border: none; padding: 12px 24px; border-radius: 6px; color: white; text-decoration: none; display: inline-block; width: fit-content;">Explore</a>
-                  </div>
+                  <p style="color: white; font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; font-family: 'Montserrat', sans-serif; font-weight: 400;">
+                  Trinity began as a specialist staffing company, but we evolved to meet the broader challenges of talent, technology, and business transformation. Today, we stand at the forefront of Data and AI innovation, empowering organizations to achieve digital transformation with confidence.
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="databricks-section" style="background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop') center/cover; padding: 80px 0;" data-aos="fade-up">
-          <div class="padding-global">
-            <div class="container-large" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+              
+              <!-- Large Image -->
+              <div style="margin-bottom: 4rem;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                <img
+                  src="https://cdn.prod.website-files.com/68c8ed013c167a28e6d84332/68c8ed023c167a28e6d8443e_66dec62704d296fdf1be0088_team_discussion.avif"
+                  alt="Team Discussion"
+                  style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;"
+                />
+              </div>
+              
+              <!-- Databricks Section -->
               <div style="display: grid; grid-template-columns: 60% 40%; gap: 2rem; align-items: center;">
                 <!-- Left Content -->
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                  <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;" data-aos="fade-up">Elite Databricks Consulting Partner</h2>
+                <div style="display: flex; flex-direction: column; justify-content: center;" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+                  <h2 style="color: white; font-size: 1.8rem; margin-bottom: 1.5rem;">Elite Databricks Consulting Partner</h2>
                   <p style="color: white; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">Transform your data into AI-powered insights with our certified Databricks expertise. Start your AI-driven transformation journey today.</p>
                   <div style="text-align: center;">
                     <a href="contact.html#consultation" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-block; width: fit-content; transition: all 0.3s ease; cursor: pointer;">Talk to Data Experts</a>
@@ -1842,16 +2177,16 @@ a,
                 </div>
                 
                 <!-- Right Badges -->
-                <div style="display: flex; justify-content: flex-end; gap: 2rem; align-items: center;">
+                <div style="display: flex; justify-content: flex-end; gap: 2rem; align-items: center;" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
                   <div style="text-align: center;">
                     <a href="https://www.databricks.com/learn/certification/data-engineer-associate" target="_blank" style="text-decoration: none;">
-                      <img src="https://www.databricks.com/sites/default/files/2024-05/associate-badge-de.png?v=1717145547" alt="Databricks Associate Data Engineer" style="width: 140px; height: 140px; object-fit: contain; margin-bottom: 1rem; cursor: pointer; transition: transform 0.3s ease;" data-aos="zoom-in" data-aos-delay="300">
+                      <img src="https://www.databricks.com/sites/default/files/2024-05/associate-badge-de.png?v=1717145547" alt="Databricks Associate Data Engineer" style="width: 140px; height: 140px; object-fit: contain; margin-bottom: 1rem; cursor: pointer; transition: transform 0.3s ease;">
                     </a>
                     <h3 style="color: white; font-size: 1rem; font-weight: 600; margin: 0;">10+ Associate Engineers</h3>
                   </div>
                   <div style="text-align: center;">
                     <a href="https://www.databricks.com/learn/certification/data-engineer-professional" target="_blank" style="text-decoration: none;">
-                      <img src="https://www.databricks.com/sites/default/files/2024-05/professional-badge-de.png?v=1717145841" alt="Databricks Professional Data Engineer" style="width: 140px; height: 140px; object-fit: contain; margin-bottom: 1rem; cursor: pointer; transition: transform 0.3s ease;" data-aos="zoom-in" data-aos-delay="500">
+                      <img src="https://www.databricks.com/sites/default/files/2024-05/professional-badge-de.png?v=1717145841" alt="Databricks Professional Data Engineer" style="width: 140px; height: 140px; object-fit: contain; margin-bottom: 1rem; cursor: pointer; transition: transform 0.3s ease;">
                     </a>
                     <h3 style="color: white; font-size: 1rem; font-weight: 600; margin: 0;">Professional Engineers</h3>
                   </div>
@@ -1861,7 +2196,11 @@ a,
           </div>
         </section>
 
-        <section class="tech-stack-section" style="background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop') center/cover; padding: 80px 0;">
+
+
+
+
+        <section class="tech-stack-section" style="background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop') center/cover; padding: 80px 0 20px 0;" data-aos="fade-up" data-aos-duration="1200">
           <div class="padding-global padding-section-large">
             <div class="container-large">
               <div class="title_block">
@@ -1873,84 +2212,94 @@ a,
                 </div>
               </div>
               <div class="padding-bottom padding-medium"></div>
-              <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="width: 40px; height: 40px;">
+              <div class="tech-cards-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="width: 32px; height: 32px;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Azure</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">Azure</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Cloud Platform</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://logos-world.net/wp-content/uploads/2024/01/Databricks-Symbol.png" alt="Databricks" style="max-width: 40px; max-height: 40px; object-fit: contain;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://logos-world.net/wp-content/uploads/2024/01/Databricks-Symbol.png" alt="Databricks" style="width: 32px; height: 32px; object-fit: contain;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Databricks</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">Databricks</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Data Analytics</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT" style="width: 40px; height: 40px;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="../cdn.prod.website-files.com/images/dbt-icon-2yxlz1fvy25mvn5scgnlw.webp" alt="DBT" style="width: 32px; height: 32px;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">DBT</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">DBT</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Data Transform</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://images.icon-icons.com/2699/PNG/512/fivetran_logo_icon_170149.png" alt="Fivetran" style="width: 40px; height: 40px;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://images.icon-icons.com/2699/PNG/512/fivetran_logo_icon_170149.png" alt="Fivetran" style="width: 32px; height: 32px;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Fivetran</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">Fivetran</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Data Pipeline</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" style="width: 40px; height: 40px;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" style="width: 32px; height: 32px;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Next.js</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">Next.js</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Web Framework</p>
                 </div>
               </div>
-              <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; max-width: 1200px; margin: 2rem auto 0;">
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/200px-Amazon_Web_Services_Logo.svg.png" alt="AWS" style="max-width: 40px; max-height: 40px; object-fit: contain;">
+              <div class="tech-cards-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; max-width: 1200px; margin: 2rem auto 1rem;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/200px-Amazon_Web_Services_Logo.svg.png" alt="AWS" style="width: 32px; height: 32px; object-fit: contain;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">AWS</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">AWS</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Cloud Services</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFQ68GQ7HaMDD9EHZkEcthYaVxDZstZadJ4A&s" alt="Odoo" style="max-width: 40px; max-height: 40px; object-fit: contain;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="700">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFQ68GQ7HaMDD9EHZkEcthYaVxDZstZadJ4A&s" alt="Odoo" style="width: 32px; height: 32px; object-fit: contain;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Odoo</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">Odoo</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">ERP System</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="width: 40px; height: 40px;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="width: 32px; height: 32px;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Java</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">Java</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Programming</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Logo.png" alt="Oracle" style="max-width: 40px; max-height: 40px; object-fit: contain;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="900">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Logo.png" alt="Oracle" style="width: 32px; height: 32px; object-fit: contain;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">Oracle</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">Oracle</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Database</p>
                 </div>
-                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1rem; text-align: center; transition: all 0.3s ease;">
-                  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAnZkZJkvI08aejoNEmEy2W3rDrTKYa2dUdGkvS8xy7Vzt3T5PpLu-gumocc2IZZjDZBo&usqp=CAU" alt="SAP" style="width: 40px; height: 40px;">
+                <div class="tech-card" style="background: #f8f9fa; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; border: none;" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000">
+                  <div style="width: 60px; height: 60px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAnZkZJkvI08aejoNEmEy2W3rDrTKYa2dUdGkvS8xy7Vzt3T5PpLu-gumocc2IZZjDZBo&usqp=CAU" alt="SAP" style="width: 32px; height: 32px;">
                   </div>
-                  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #111111; font-size: 0.9rem; margin: 0;">SAP</h3>
+                  <h3 style="font-weight: 700; color: #1f2937; font-size: 1rem; margin: 0 0 0.5rem 0;">SAP</h3>
+                  <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Enterprise</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section id="services" class="services" style="background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover;">
+        <section id="services" class="services" style="background: #0f0f0f !important; padding-bottom: 20px;" data-aos="fade-up" data-aos-duration="1000">
           <div class="padding-global padding-section-large-xx">
             <div class="container-large">
               <div
                 data-w-id="4aefd6d9-ac0e-76a7-a5bc-cda80f4144db"
                 class="title_block"
               >
-                <h2 class="title-small" style="font-size: 1.2rem;" data-aos="fade-up">OUR SERVICES</h2>
+                <h2 class="title-small" style="font-size: 1.2rem; color: white;">OUR SERVICES</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <p style="font-size: 1.8rem;" data-aos="fade-up" data-aos-delay="200">Trinity's comprehensive data analytics and AI solutions designed to transform your business and drive sustainable growth</p>
+                  <p style="font-size: 1.8rem; color: white;">Trinity's comprehensive data analytics and AI solutions designed to transform your business and drive sustainable growth</p>
                   <div class="title_block-right">
                   </div>
                 </div>
@@ -1960,7 +2309,7 @@ a,
                 data-w-id="6695d41a-66a7-37c5-93fd-b58b5568e196"
                 class="w-dyn-list"
               >
-                <div class="services-grid-new" data-stagger="150">
+                <div class="services-grid-new" data-stagger="150" style="grid-template-columns: repeat(3, 1fr);">
                   <a href="services/data-strategy-template.html" class="service-card-new" data-aos="zoom-in" data-aos-delay="100">
                     <div class="service-icon-new">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2001,8 +2350,6 @@ a,
                     </div>
                     <h3 class="service-title-new">Data Modern</h3>
                   </a>
-
-
                   <a href="services/web-development.html" class="service-card-new" data-aos="zoom-in" data-aos-delay="600">
                     <div class="service-icon-new">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2043,26 +2390,15 @@ a,
                     </div>
                     <h3 class="service-title-new">Staffing</h3>
                   </a>
-
-                      
-                         
-                       
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div></div
-                    ></a>
-                  </div>
-                  <div style="text-align: center; margin-top: 1rem; grid-column: 1 / -1;">
-                    <a href="services.html" class="button is-medium w-button">Know More</a>
-                  </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                  <a href="services.html" class="button is-medium w-button" style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 25px;">Know More</a>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="counters padding-section-medium" style="background: white;" data-aos="fade-up">
+        <section class="counters padding-section-medium" style="background: #0f0f0f !important; padding-top: 0px; margin-top: -40px;" data-aos="fade-up" data-aos-duration="800">
           <div class="padding-global">
             <div class="container-large">
               <div class="counter-grid">
@@ -2070,8 +2406,8 @@ a,
                   data-w-id="e38437d7-6d75-8391-6b5c-b69fcd84560b"
                   class="counter-grid-col"
                 >
-                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="100"><strong>50+</strong></h3>
-                  <p class="paragraph-medium-lighter is-counter">
+                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="100" style="color: white;"><strong>50+</strong></h3>
+                  <p class="paragraph-medium-lighter is-counter" style="color: white;">
                     <strong>Projects Delivered</strong>
                   </p>
                 </div>
@@ -2079,8 +2415,8 @@ a,
                   data-w-id="e38437d7-6d75-8391-6b5c-b69fcd845611"
                   class="counter-grid-col"
                 >
-                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="200"><strong>25+</strong></h3>
-                  <p class="paragraph-medium-lighter is-counter">
+                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="200" style="color: white;"><strong>25+</strong></h3>
+                  <p class="paragraph-medium-lighter is-counter" style="color: white;">
                     <strong>Years Experience</strong>
                   </p>
                 </div>
@@ -2088,8 +2424,8 @@ a,
                   data-w-id="e38437d7-6d75-8391-6b5c-b69fcd845617"
                   class="counter-grid-col"
                 >
-                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="300"><strong>4+</strong></h3>
-                  <p class="paragraph-medium-lighter is-counter">
+                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="300" style="color: white;"><strong>4+</strong></h3>
+                  <p class="paragraph-medium-lighter is-counter" style="color: white;">
                     <strong>Countries Served</strong>
                   </p>
                 </div>
@@ -2097,8 +2433,8 @@ a,
                   data-w-id="e38437d7-6d75-8391-6b5c-b69fcd84561d"
                   class="counter-grid-col"
                 >
-                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="400"><strong>100+</strong></h3>
-                  <p class="paragraph-medium-lighter is-counter">
+                  <h3 class="counter-title" data-aos="zoom-in" data-aos-delay="400" style="color: white;"><strong>100+</strong></h3>
+                  <p class="paragraph-medium-lighter is-counter" style="color: white;">
                     <strong>Combined Experience</strong>
                   </p>
                 </div>
@@ -2106,7 +2442,7 @@ a,
             </div>
           </div>
         </section>
-        <section class="padding-section-large-xx sectors" data-aos="fade-up">
+        <section class="padding-section-large-xx sectors" data-aos="fade-up" data-aos-duration="1000">
           <div class="padding-global">
             <div class="container-large">
               <div
@@ -2114,14 +2450,14 @@ a,
                 class="title_block"
               >
                 <div class="title-row">
-                  <h2 class="title-small" style="color: #666666; font-weight: normal; font-size: 1.2rem;" data-aos="fade-up">Industries Trinity Transforms</h2>
+                  <h2 class="title-small" style="font-size: 1.2rem;">Industries Trinity Transforms</h2>
                   <div class="title_block-right">
                     <div class="padding-bottom padding-regular"></div>
                   </div>
                 </div>
               </div>
               <div class="padding-bottom padding-medium"></div>
-              <p style="color: #22396b; font-size: 1.3rem; font-weight: 600; line-height: 1.4;" data-aos="fade-up" data-aos-delay="200">
+              <p style="font-size: 1.8rem;">
                 Trinity delivers cutting-edge solutions across diverse sectors with
                 data-driven insights and innovative technology.<br />
               </p>
@@ -2133,6 +2469,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b852c"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="100"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2146,6 +2485,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b8531"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="200"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2159,6 +2501,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b8536"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="300"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2172,6 +2517,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b853b"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="400"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2185,6 +2533,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b8540"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="500"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2198,6 +2549,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b8545"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="600"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2211,6 +2565,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b854a"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="700"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2224,6 +2581,9 @@ a,
                 <div
                   data-w-id="73d25ef8-c405-6595-21b7-1811500b854f"
                   class="sector_thumbnail"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="800"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -2238,12 +2598,15 @@ a,
             </div>
           </div>
         </section>
-        <section class="businesses-section fade-in" style="background: #0f0f0f; padding: 80px 0;">
+        <section class="businesses-section fade-in" style="background: #0f0f0f; padding: 80px 0;" data-aos="fade-up" data-aos-duration="1200">
           <div class="padding-global">
             <div class="container-large">
               <div class="title_block">
-                <h2 class="title-small" style="color: white !important; font-size: 1.2rem; font-weight: 700; text-align: center; margin-bottom: 1rem;">Our Business Portfolio</h2>
-                <p style="color: #ccc !important; font-size: 1.1rem; font-weight: 400; text-align: center; margin-bottom: 3rem; opacity: 0.9;">Trinity's innovative companies delivering transformative solutions across multiple industries</p>
+                <h2 class="title-small" style="font-size: 1.2rem; color: white;">Our Business Portfolio</h2>
+                <div class="padding-top padding-xsmall"></div>
+                <div class="title-row">
+                  <p style="font-size: 1.8rem; color: white;">Trinity's innovative companies delivering transformative solutions across multiple industries</p>
+                </div>
               </div>
               <div class="padding-bottom padding-medium"></div>
               <div class="businesses-grid-new">
@@ -2255,9 +2618,6 @@ a,
                     <h3 class="business-title">Hotelierlinks</h3>
                     <p class="business-desc">Hotelierlinks specializes in transforming the hospitality industry through innovative technology solutions.</p>
                     <div class="business-tech-stack">
-                      <span class="tech-icon">🏨</span>
-                      <span class="tech-icon">⚡</span>
-                      <span class="tech-icon">🔗</span>
                     </div>
                     <a href="https://hotelierlinks.com/about-us/" target="_blank" class="visit-website-btn">Visit Website</a>
                   </div>
@@ -2270,11 +2630,8 @@ a,
                     <h3 class="business-title">GrowthPulse</h3>
                     <p class="business-desc">Full-service digital marketing agency driving measurable business growth through strategic optimization.</p>
                     <div class="business-tech-stack">
-                      <span class="tech-icon">📈</span>
-                      <span class="tech-icon">🎯</span>
-                      <span class="tech-icon">💡</span>
                     </div>
-                    <span class="coming-soon">Coming Soon</span>
+                    <a href="https://growthpulss.com/" target="_blank" class="visit-website-btn">Visit Website</a>
                   </div>
                 </div>
                 <div class="business-card-new" data-aos="zoom-in" data-aos-delay="300">
@@ -2285,9 +2642,6 @@ a,
                     <h3 class="business-title">TNova</h3>
                     <p class="business-desc">Leading provider of ERPNext implementation and customization services for business optimization.</p>
                     <div class="business-tech-stack">
-                      <span class="tech-icon">⚙️</span>
-                      <span class="tech-icon">📊</span>
-                      <span class="tech-icon">🔧</span>
                     </div>
                     <span class="coming-soon">Coming Soon</span>
                   </div>
@@ -2300,9 +2654,6 @@ a,
                     <h3 class="business-title">Kallooriconnect</h3>
                     <p class="business-desc">Comprehensive educational networking platform bridging students, institutions, and career opportunities.</p>
                     <div class="business-tech-stack">
-                      <span class="tech-icon">🎓</span>
-                      <span class="tech-icon">🌐</span>
-                      <span class="tech-icon">🤝</span>
                     </div>
                     <a href="https://kallooriconnect.com/" target="_blank" class="visit-website-btn">Visit Website</a>
                   </div>
@@ -2311,15 +2662,14 @@ a,
             </div>
           </div>
         </section>
-        <section class="global-section slide-up" style="padding-top: 120px;">
+        <section class="global-section slide-up" style="padding-top: 120px;" data-aos="fade-up" data-aos-duration="1000">
           <div class="padding-global padding-section-large">
             <div class="container-large">
               <div class="title_block">
                 <h2 class="title-small" style="font-size: 1.2rem;">GLOBAL PRESENCE</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <p style="font-size: 1.8rem;">Trinity powers digital transformation with data analytics and AI across four continents with innovative technology
-
+                  <p style="font-size: 1.8rem;">Trinity powers digital transformation with data analytics and AI across four continents with innovative technology</p>
                 </div>
               </div>
               <div class="padding-bottom padding-medium"></div>
@@ -2399,35 +2749,35 @@ a,
             </div>
           </div>
         </section>
-        <section class="faq-section" style="padding: 2rem 0 1.5rem 0; margin-top: 2rem;" data-aos="fade-up">
+        <section class="faq-section" style="padding: 2rem 0 1.5rem 0; margin-top: 2rem;" data-aos="fade-up" data-aos-duration="800">
           <div class="padding-global">
             <div class="container-large">
               <div class="title_block">
-
+                <h2 class="title-small" style="font-size: 1.2rem;">FAQ</h2>
                 <div class="padding-top padding-xsmall"></div>
                 <div class="title-row">
-                  <h2 style="font-size: 1.8rem;" data-aos="fade-up">Frequently Asked Questions</h2>
+                  <p style="font-size: 1.8rem;">Frequently Asked Questions</p>
                 </div>
               </div>
               <div style="padding-bottom: 1rem;"></div>
               <div class="faq-grid">
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
                   <h3 class="faq-question">What is data analytics and AI?</h3>
                   <p class="faq-answer">Data analytics is the process of examining data to uncover valuable insights, and AI helps by automating this analysis, making it faster and more effective.</p>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                   <h3 class="faq-question">How does artificial intelligence enhance data analytics?</h3>
                   <p class="faq-answer">AI accelerates data analysis, identifies hidden patterns, and predicts future trends, enabling businesses to make more informed decisions.</p>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                   <h3 class="faq-question">Why is digital transformation important for modern businesses?</h3>
                   <p class="faq-answer">Digital transformation helps businesses stay competitive by using advanced technology to improve efficiency, innovate, and better serve customers.</p>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
                   <h3 class="faq-question">What industries does Trinity Technology Solutions serve?</h3>
                   <p class="faq-answer">We serve finance, healthcare, manufacturing, retail, and more, tailoring AI and data solutions based on each industry's requirements.</p>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
                   <h3 class="faq-question">How do I get started with Trinity Technology Solutions?</h3>
                   <p class="faq-answer">Contact us for a consultation, and we will help you plan and execute your data analytics and AI initiatives.</p>
                 </div>
@@ -3209,7 +3559,7 @@ a,
         });
         
         const locations = [
-          { name: 'Chennai', country: 'India', coords: [13.0827, 80.2707], id: 'chennai' },
+          { name: 'Chennai', country: 'Avvaiyar Street, Ambal Nagar, Ekkatuthangal, Chennai, India', coords: [13.0067, 80.1910], id: 'chennai' },
           { name: 'The Hague', country: 'Netherlands', coords: [52.0705, 4.3007], id: 'hague' },
           { name: 'Muscat', country: 'Oman', coords: [23.5859, 58.4059], id: 'muscat' },
           { name: 'Plano', country: 'Texas, USA', coords: [33.0198, -96.6989], id: 'plano' }
