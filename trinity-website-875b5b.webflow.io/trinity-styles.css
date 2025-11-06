@@ -226,6 +226,17 @@ html, body {
   border-bottom: 1px solid #e5e7eb;
 }
 
+/* Ensure logo visibility */
+.new-logo a {
+  display: block;
+  line-height: 0;
+}
+
+.new-logo img {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 .new-header-container {
   display: flex;
   align-items: center;
@@ -240,9 +251,18 @@ html, body {
   flex-shrink: 0;
 }
 
+.new-logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
 .new-logo img {
-  height: 80px;
+  height: 60px;
   width: auto;
+  display: block;
+  max-width: 200px;
+  object-fit: contain;
 }
 
 .new-nav {
