@@ -1,0 +1,92 @@
+/* Increased Header Styles for Sub-Service Pages */
+.new-responsive-header {
+  padding: 1.2rem 0 !important;
+}
+
+.new-header-container {
+  padding: 0 2rem !important;
+}
+
+.new-logo img {
+  height: 60px !important;
+  width: auto !important;
+  margin-left: 0 !important;
+}
+
+.new-nav {
+  gap: 2.5rem !important;
+}
+
+.new-nav a {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+}
+
+.new-get-started {
+  padding: 0.8rem 1.5rem !important;
+  font-size: 1.1rem !important;
+}
+
+body {
+  padding-top: 100px !important;
+}
+
+/* Hero Section Adjustments */
+.section_hero {
+  padding: 100px 0 !important;
+}
+
+.hero_content h1 {
+  font-size: 3.2rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.hero_content p {
+  font-size: 1.3rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Footer Adjustments */
+footer h4 {
+  font-size: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+footer a, footer span {
+  font-size: 0.85rem !important;
+}
+
+footer .partner-logo {
+  height: 30px !important;
+}
+
+footer div[style*="font-size: 12rem"] {
+  font-size: 8rem !important;
+}
+
+@media (max-width: 768px) {
+  .new-responsive-header {
+    padding: 0.8rem 0 !important;
+  }
+  
+  .new-logo img {
+    height: 50px !important;
+  }
+  
+  body {
+    padding-top: 80px !important;
+  }
+  
+  .section_hero {
+    padding: 70px 0 !important;
+  }
+  
+  .hero_content h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  footer div[style*="font-size: 8rem"] {
+    font-size: 6rem !important;
+  }
+}

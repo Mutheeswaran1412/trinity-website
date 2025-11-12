@@ -1,0 +1,68 @@
+.nav_fixed {
+  background: #1a1a1a !important;
+  box-shadow: none !important;
+}
+
+.nav_container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  height: 60px !important;
+}
+
+.nav_brand {
+  color: white !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.nav_logo {
+  display: block !important;
+  height: 40px !important;
+}
+
+.nav_menu {
+  position: static !important;
+}
+
+.nav_menu_container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 3rem !important;
+}
+
+.nav-menu-inner {
+  display: flex !important;
+  gap: 2rem !important;
+}
+
+.nav_menu_link {
+  color: #ccc !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+}
+
+.nav_menu_link:hover,
+.nav_menu_link.w--current {
+  color: white !important;
+}
+
+.button.is-nav {
+  background: transparent !important;
+  color: #ccc !important;
+  border: 1px solid #444 !important;
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+}
+
+.button.is-nav:hover {
+  color: white !important;
+  border-color: #666 !important;
+}

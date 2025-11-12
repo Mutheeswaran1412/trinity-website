@@ -1,0 +1,17 @@
+/* Reduce width for all sections on index page except main hero and footer */
+.container-large:not(footer .container-large):not(.hero_section .container-large) {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Target specific sections on index page */
+.services_comp .container-large,
+.about_comp .container-large,
+.testimonials_comp .container-large,
+.partners_comp .container-large,
+.cta_comp .container-large,
+.helping_business_block .container-large,
+.teams_block .container-large {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}

@@ -1,0 +1,43 @@
+/* Fix Who We Are section image positioning */
+.two_column_comp {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.two_column-thumb_wr {
+  flex: 1.2;
+  max-width: 55%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.two_column_content {
+  flex: 0.8;
+  max-width: 45%;
+  padding-left: 2rem;
+}
+
+.two_column-thumb_wr img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .two_column_comp {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .two_column-thumb_wr,
+  .two_column_content {
+    max-width: 100%;
+  }
+}

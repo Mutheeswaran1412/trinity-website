@@ -1,0 +1,58 @@
+/* Increase full website page width */
+.container-large {
+  max-width: 1400px !important;
+}
+
+.container-medium {
+  max-width: 1200px !important;
+}
+
+.container-small {
+  max-width: 1000px !important;
+}
+
+/* Increase header width only */
+.nav_container {
+  max-width: 1600px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+/* Move logo to left */
+.nav_brand {
+  margin-left: -2rem !important;
+}
+
+/* Center nav menu in header */
+.nav_menu {
+  position: absolute !important;
+  left: 82% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Position get started button near career nav */
+.button.is-nav {
+  position: absolute !important;
+  left: 95% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.nav_logo {
+  height: 80px !important;
+  width: 400px !important;
+}
+
+footer > div:nth-child(2) {
+  max-width: 1400px !important;
+}
+
+/* Increase footer company logo */
+footer img {
+  height: 80px !important;
+  width: auto !important;
+}

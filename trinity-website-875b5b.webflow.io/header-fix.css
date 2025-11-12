@@ -1,0 +1,219 @@
+/* TRINITY HEADER FIX - Consistent header across all pages */
+
+/* Fixed header positioning */
+.nav_fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  background: white !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  width: 100% !important;
+}
+
+/* Header container - consistent width and layout */
+.nav_container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 2rem !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  height: 80px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Logo styling */
+.nav_brand {
+  position: absolute !important;
+  left: 2rem !important;
+  flex-shrink: 0 !important;
+}
+
+.nav_logo {
+  height: 50px !important;
+  width: auto !important;
+}
+
+/* Navigation menu positioning */
+.nav_menu {
+  position: static !important;
+}
+
+.nav_menu_container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2rem !important;
+}
+
+.nav-menu-inner {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+}
+
+/* Navigation links styling */
+.nav_menu_link {
+  color: #333 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  transition: color 0.3s ease !important;
+}
+
+.nav_menu_link:hover,
+.nav_menu_link.w--current {
+  color: #22396b !important;
+}
+
+/* Get Started button - ensure visibility and styling */
+.button.is-nav {
+  display: inline-block !important;
+  background: #22396b !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+.button.is-nav:hover {
+  background: #1a2d5a !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(34, 57, 107, 0.3) !important;
+}
+
+/* Remove any duplicate buttons */
+.nav_menu_container .button.is-nav:not(:last-child) {
+  display: none !important;
+}
+
+/* Mobile hamburger menu */
+.nav_button {
+  display: none !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  cursor: pointer !important;
+}
+
+.nav_lines_icon {
+  width: 24px !important;
+  height: 18px !important;
+  position: relative !important;
+}
+
+.nav_menu-lines div {
+  width: 100% !important;
+  height: 2px !important;
+  background: #333 !important;
+  margin: 3px 0 !important;
+  transition: 0.3s !important;
+}
+
+/* Content spacing to account for fixed header */
+.u-nav-spacer {
+  height: 80px !important;
+}
+
+.main-wrapper {
+  padding-top: 0 !important;
+}
+
+.section_hero {
+  margin-top: 0 !important;
+}
+
+/* Mobile responsive design */
+@media (max-width: 991px) {
+  .nav_container {
+    padding: 0 1rem !important;
+  }
+  
+  .nav_button {
+    display: flex !important;
+  }
+  
+  .nav_menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .nav_menu.w--open {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .nav_menu_container {
+    flex-direction: column !important;
+    padding: 2rem 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  .nav-menu-inner {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 1rem !important;
+    margin-right: 0 !important;
+  }
+  
+  .nav_menu_link {
+    padding: 0.5rem 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .button.is-nav {
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 1rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav_container {
+    padding: 0 1rem !important;
+    height: 70px !important;
+  }
+  
+  .nav_logo {
+    height: 40px !important;
+  }
+  
+  .u-nav-spacer {
+    height: 70px !important;
+  }
+}
+
+/* Ensure header appears above all other content */
+.nav_fixed {
+  z-index: 9999 !important;
+}
+
+/* Fix any potential overflow issues */
+body {
+  overflow-x: hidden !important;
+}
+
+.page-wrapper {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
